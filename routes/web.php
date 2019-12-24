@@ -17,15 +17,15 @@ Route::get('/', function () {
 });
 /**-------------------------------Routes Structures------------------------------ */
 Route::get('/structure',[
-    'as' => 'indexStructure',
+    'as' => 'structure',
     'uses' => 'StructureController@index'
 ]);
 Route::post('/addStructure',[
     'as' => 'createStructure',
     'uses' => 'StructureController@createStructure'
 ]);
-Route::get('/list',[
-    'as' => 'showStructure',
+Route::get('/showStructures',[
+    'as' => 'showStructures',
     'uses' => 'StructureController@showStructure'
 ]);
 /**----------------------------Fin Routes Structures----------------------------- */
@@ -34,9 +34,9 @@ Route::get('/agence',[
     'as' => 'agence',
     'uses' => 'AgenceController@index'
 ]);
-Route::get('/compte',[
-    'as' => 'compte',
-    'uses' => 'AgenceController@compteur'
+Route::get('/showAgences',[
+    'as' => 'showAgences',
+    'uses' => 'AgenceController@showAgence'
 ]);
 Route::post('/addAgence',[
     'as' => 'createAgence',
@@ -66,6 +66,10 @@ Route::post('/addAgent',[
     'as' => 'createAgent',
     'uses' => 'AgentController@createAgent'
 ]);
+Route::get('/showAgents',[
+    'as' => 'showAgents',
+    'uses' => 'AgentController@showAgent'
+]);
 /**----------------------------Fin Routes Agents--------------------------------- */
 /**-------------------------------Routes Guichets-------------------------------- */
 Route::get('/guichet',[
@@ -75,5 +79,9 @@ Route::get('/guichet',[
 Route::post('/addGuichet',[
     'as' => 'createGuichet',
     'uses' => 'GuichetController@createGuichet'
+]);
+Route::get('/showGuichets',[
+    'as' => 'showGuichets',
+    'uses' => 'GuichetController@showGuichet'
 ]);
 /**----------------------------Fin Routes Guichets-------------------------------- */

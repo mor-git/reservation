@@ -1,4 +1,4 @@
-<div>
+<!--<div>
     <form method="post" action="{{ url('/addAgence') }}" >
     
     <input type="hidden" value="{{csrf_token()}}" name="_token" />
@@ -43,6 +43,53 @@
         <div class="formgroup">
             <input class="btn btn-success" type="submit" value="Valider" name="btn">
         </div>
-        <input type="text" value="{{ $teur }}" name="pwd" id="pwd" class="form-control" readonly>
+        <input type="text" value="" name="pwd" id="pwd" class="form-control" readonly>
     </form>
-</div>
+</div>-->
+@extends('layouts.layout')
+
+@section('contenu')
+<center>
+<div class="container">
+<div style="margin-top : 190px"></div>
+  <div class="row mg-t-80">
+    <div class="col-xl-6">
+      <div class="form-layout form-layout-4 ">
+        <h6 class="br-section-label">Left Label Alignment</h6>
+        <p class="br-section-text">A basic form where labels are aligned in left.</p>
+        <div class="row">
+          <label class="col-sm-4 form-control-label">Name: <span class="tx-danger">*</span></label>
+          <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+            <input type="text" name="nom" class="form-control" placeholder="Name">
+          </div>
+        </div><!-- row -->
+        <div class="row mg-t-20">
+          <label class="col-sm-4 form-control-label">Lastname: <span class="tx-danger">*</span></label>
+          <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+            <input type="text" class="form-control" placeholder="Enter lastname">
+          </div>
+        </div>
+        <div class="row mg-t-20">
+          <label class="col-sm-4 form-control-label">Email: <span class="tx-danger">*</span></label>
+          <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+            <input type="text" class="form-control" placeholder="Enter email address">
+          </div>
+        </div>
+        <div class="row mg-t-20">
+          <label class="col-sm-4 form-control-label">Address: <span class="tx-danger">*</span></label>
+          <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+            <textarea rows="2" class="form-control" placeholder="Enter your address"></textarea>
+          </div>
+        </div>
+        <div class="form-layout-footer mg-t-30">
+          <button class="btn btn-info">Submit Form</button>
+          <button class="btn btn-secondary">Cancel</button>
+        </div><!-- form-layout-footer -->
+      </div><!-- form-layout -->
+    </div><!-- col-6 -->
+   
+  </div><!-- row -->
+  
+</di>
+</center>
+@endsection

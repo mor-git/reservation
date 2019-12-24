@@ -4,7 +4,7 @@
       <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
       <ul class="br-sideleft-menu">
         <li class="br-menu-item">
-          <a href="index.html" class="br-menu-link active">
+          <a href="{{ url('/') }}" class="br-menu-link active">
             <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
             <span class="menu-item-label">Dashboard</span>
           </a><!-- br-menu-link -->
@@ -15,9 +15,8 @@
             <span class="menu-item-label">Structures</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="#" class="sub-link">Icons</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Progress</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Spinners</a></li>
+            <li class="sub-item"><a href="{{ url('/structure') }}" class="sub-link">New Structure</a></li>
+            <li class="sub-item"><a href="{{ url('/showStructures') }}" class="sub-link">List Structures</a></li>
           </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
@@ -26,9 +25,8 @@
             <span class="menu-item-label">Agences</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="#" class="sub-link">Basic Nav</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Nav Layouts</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Nav Effects</a></li>
+            <li class="sub-item"><a href="{{ url('/agence') }}" class="sub-link">New Agence</a></li>
+            <li class="sub-item"><a href="{{ url('/showAgences') }}" class="sub-link">List Agences</a></li>
           </ul>
         </li>
         <li class="br-menu-item">
@@ -37,10 +35,8 @@
             <span class="menu-item-label">Guichets</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="#" class="sub-link">Form Elements</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Form Layouts</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Form Validation</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Form Wizards</a></li>
+            <li class="sub-item"><a href="{{ url('/guichet') }}" class="sub-link">New Guichet</a></li>
+            <li class="sub-item"><a href="{{ url('/showGuichets') }}" class="sub-link">List Guichets</a></li>
           </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
@@ -49,20 +45,18 @@
             <span class="menu-item-label">Agents</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub nav flex-column">
-            <li class="sub-item"><a href="#" class="sub-link">Basic Table</a></li>
-            <li class="sub-item"><a href="#" class="sub-link">Data Table</a></li>
+            <li class="sub-item"><a href="{{ url('/agent') }}" class="sub-link">New Agent</a></li>
+            <li class="sub-item"><a href="{{ url('/showAgents') }}" class="sub-link">List Agents</a></li>
           </ul>
         </li><!-- br-menu-item -->
         
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link">
+          <a href="{{ url('/reservation') }}" class="br-menu-link">
             <i class="fa fa-mobile tx-20"></i>
             <span class="menu-item-label">Reservations</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
-       
       </ul><!-- br-sideleft-menu -->
-
     </div><!-- br-sideleft -->
 <!-- ########## END: LEFT PANEL ########## -->
 

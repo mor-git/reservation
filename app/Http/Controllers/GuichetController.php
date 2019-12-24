@@ -14,7 +14,7 @@ class GuichetController extends Controller
      */
     public function index()
     {
-        return view('guichets/addGuichet');
+        return view('guichets.addGuichet');
     }
 
     /**
