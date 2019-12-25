@@ -45,16 +45,24 @@ Route::post('/addAgence',[
 /**----------------------------Fin Routes Agences-------------------------------- */
 /**-------------------------------Routes Reservations---------------------------- */
 Route::get('/reservation',[
-    'as' => 'index',
+    'as' => 'reservation',
     'uses' => 'ReservationController@index'
 ]);
-Route::post('/create',[
-    'as' => 'createReservation',
+Route::post('/addReservation',[
+    'as' => 'addReservation',
     'uses' => 'ReservationController@createReservation'
 ]);
 Route::get('/list',[
     'as' => 'showReservation',
     'uses' => 'ReservationController@showReservation'
+]);
+Route::get('/verification',[
+    'as' => 'verification',
+    'uses' => 'ReservationController@verifierReservation'
+]);
+Route::post('/valider',[
+    'as' => 'valider',
+    'uses' => 'ReservationController@validerReservation'
 ]);
 /**----------------------------Fin Routes Reservations--------------------------- */
 /**-------------------------------Routes Agents---------------------------------- */

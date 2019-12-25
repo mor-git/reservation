@@ -45,6 +45,13 @@ class ReservationController extends Controller
     {
         //
     }
+    /**
+     * 
+     */
+    public function verifierReservation()
+    {
+        return view('reservations/verification');
+    }
 
     /**
      * Display the specified resource.

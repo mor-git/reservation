@@ -75,7 +75,7 @@ class AgenceController extends Controller
     public function showAgence()
     {
         $agences = Agence::all();
-        return view('agences/showAgence', ['les_agences' => $agence]);
+        return view('agences/showAgence', ['les_agences' => $agences]);
     }
 
     /**

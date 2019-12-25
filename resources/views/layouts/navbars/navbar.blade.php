@@ -21,7 +21,7 @@
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
-            <i class="menu-item-icon ion-ios-redo-outline tx-24"></i>
+            <i class="menu-item-icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">Agences</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
@@ -49,13 +49,22 @@
             <li class="sub-item"><a href="{{ url('/showAgents') }}" class="sub-link">List Agents</a></li>
           </ul>
         </li><!-- br-menu-item -->
-        
         <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-mobile tx-18"></i>
+            <span class="menu-item-label">Rèservations</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub nav flex-column">
+            <li class="sub-item"><a href="{{ url('/verification') }}" class="sub-link">Vérification</a></li>
+            <li class="sub-item"><a href="{{ url('/valider') }}" class="sub-link">Réservation</a></li>
+          </ul>
+        </li><!-- br-menu-item -->
+        <!--<li class="br-menu-item">
           <a href="{{ url('/reservation') }}" class="br-menu-link">
             <i class="fa fa-mobile tx-20"></i>
             <span class="menu-item-label">Reservations</span>
-          </a><!-- br-menu-link -->
-        </li><!-- br-menu-item -->
+          </a>--><!-- br-menu-link -->
+        <!--</li>--><!-- br-menu-item -->
       </ul><!-- br-sideleft-menu -->
     </div><!-- br-sideleft -->
 <!-- ########## END: LEFT PANEL ########## -->

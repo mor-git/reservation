@@ -45,9 +45,13 @@
             <div class="row mg-t-10">
               <label class="col-sm-2 form-control-label">Agence: <span class="tx-danger">*</span></label>
               <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                <input type="text" name="agence" class="form-control" placeholder="Agence">
+                <select class="form-control select2" name="agence" data-placeholder="Donnez la structure">
+                  <option label="Donnez l'agence"></option>
+                  <option value="USA">United States of America</option>
+                  <option value="UK">United Kingdom</option>
+                </select>
               </div>
-            </div>
+            </div><!-- col-4 -->
             <div class="form-layout-footer mg-t-30">
               <button class="btn btn-info" type="submit">Valider</button>
               <button class="btn btn-secondary" type="reset">Annuler</button>
