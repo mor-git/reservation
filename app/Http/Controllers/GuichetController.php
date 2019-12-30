@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Guichet;
+use App\Agence;
 
 class GuichetController extends Controller
 {
@@ -14,7 +15,8 @@ class GuichetController extends Controller
      */
     public function index()
     {
-        return view('guichets.addGuichet');
+        $agence = Agence::all();
+        return view('guichets.addGuichet',['agences' => $agence]);
     }
 
     /**
@@ -28,8 +30,7 @@ class GuichetController extends Controller
         $guichet->name = $request->nom;
         $guichet->agence_id = $request->agence;
 
-        //var_dump($guichet);die();
-        //$guichet->save();
+        $guichet->save();
         return view('guichets/showGuichet');
     }
 
@@ -50,7 +51,7 @@ class GuichetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showGuichet()
+    public function showGuichet() 
     {
         $guichets = Guichet::all();
         return view('guichets/showGuichet' , ['les_guichets' => $guichets]);

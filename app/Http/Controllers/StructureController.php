@@ -29,11 +29,9 @@ class StructureController extends Controller
         $structure = new Structure();
         $structure->logo = $logo;
         $structure->name = $name;
-
-        echo $name;die();
        
-        //$structure->save();
-       // return view('structures/showStructure'); 
+        $structure->save();
+        return view('structures/showStructure'); 
     }
 
     /**
@@ -65,9 +63,10 @@ class StructureController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editStructure($id)
     {
-        //
+        $structure = Structure::find($id);
+        return view('structures.editStructure', ['le_structure' => $structure]);
     }
 
     /**

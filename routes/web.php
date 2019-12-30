@@ -24,6 +24,10 @@ Route::post('/addStructure',[
     'as' => 'createStructure',
     'uses' => 'StructureController@createStructure'
 ]);
+Route::get('/editStructure/{$id}',[
+    'as' => 'editStructure',
+    'uses' => 'StructureController@editStructure'
+]);
 Route::get('/showStructures',[
     'as' => 'showStructures',
     'uses' => 'StructureController@showStructure'

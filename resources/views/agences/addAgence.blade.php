@@ -62,10 +62,11 @@
         <div class="row mg-t-10">
             <label class="col-sm-2 form-control-label">Structure: <span class="tx-danger">*</span></label>
             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-              <select class="form-control select2" data-placeholder="Donnez la structure">
+              <select class="form-control select2" name="structure" data-placeholder="Donnez la structure">
                 <option label="Donnez la structure"></option>
-                <option value="USA">United States of America</option>
-                <option value="UK">United Kingdom</option>
+                @foreach($les_structures as $struct)
+                <option value="{{ $struct->id }}">{{ $struct->name }}</option>
+                @endforeach
               </select>
             </div>
         </div><!-- col-4 -->

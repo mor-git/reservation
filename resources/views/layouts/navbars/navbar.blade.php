@@ -1,5 +1,5 @@
  <!-- ########## START: LEFT PANEL ########## -->
- <div class="br-logo"><a href=""><span>[</span>bracket <i>plus</i><span>]</span></a></div>
+ <div class="br-logo"><a href="{{ url('/') }}"><span>[</span>bracket <i>plus</i><span>]</span></a></div>
     <div class="br-sideleft sideleft-scrollbar">
       <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
       <ul class="br-sideleft-menu">
@@ -183,18 +183,11 @@
                 <p>youremail@domain.com</p>
               </div>
               <hr>
-              <div class="tx-center">
-                <span class="profile-earning-label">Earnings After Taxes</span>
-                <h3 class="profile-earning-amount">$13,230 <i class="icon ion-ios-arrow-thin-up tx-success"></i></h3>
-                <span class="profile-earning-text">Based on list price.</span>
-              </div>
+              
               <hr>
               <ul class="list-unstyled user-profile-nav">
                 <li><a href=""><i class="icon ion-ios-person"></i> Edit Profile</a></li>
                 <li><a href=""><i class="icon ion-ios-gear"></i> Settings</a></li>
-                <li><a href=""><i class="icon ion-ios-download"></i> Downloads</a></li>
-                <li><a href=""><i class="icon ion-ios-star"></i> Favorites</a></li>
-                <li><a href=""><i class="icon ion-ios-folder"></i> Collections</a></li>
                 <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
               </ul>
             </div><!-- dropdown-menu -->

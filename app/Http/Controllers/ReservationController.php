@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Reservation;
+use App\Structure;
+use App\Agence;
 
 class ReservationController extends Controller
 {
@@ -50,7 +52,9 @@ class ReservationController extends Controller
      */
     public function verifierReservation()
     {
-        return view('reservations/verification');
+        $structures = Structure::all();
+        $agences    = Agence::all();
+        return view('reservations/verification',['les_structures'=>$structures,'les_agences'=>$agences]);
     }
 
     /**

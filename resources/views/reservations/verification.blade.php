@@ -17,32 +17,36 @@
               <label class="col-sm-4 form-control-label">Structure: <span class="tx-danger">*</span></label>
                 <select class="form-control col-sm-10 select2" name="structure" data-placeholder="Donnez la structure">
                   <option label="Donnez la structure"></option>
-                  <option value="USA">United States of Americ</option>
-                  <option value="UK">United Kingdom</option>
+                  @foreach($les_structures as $structure)
+                  <option value="{{ $structure->id }}">{{ $structure->name }}</option>
+                  @endforeach
                 </select>
               </div>
               <div class="form-group">
               <label class="col-sm-4 form-control-label">Région: <span class="tx-danger">*</span></label>
                 <select class="form-control col-sm-10 select2" name="region" data-placeholder="Donnez la structure">
                   <option label="Donnez la région"></option>
-                  <option value="USA">United States of Americ</option>
-                  <option value="UK">United Kingdom</option>
+                  @foreach($les_agences as $agence)
+                  <option value="{{ $agence->id }}">{{ $agence->region }}</option>
+                  @endforeach
                 </select>
               </div>
               <div class="form-group">
               <label class="col-sm-4 form-control-label">Ville: <span class="tx-danger">*</span></label>
                 <select class="form-control col-sm-10 select2" name="ville" data-placeholder="Donnez la structure">
                   <option label="Donnez la ville"></option>
-                  <option value="USA">United States of America</option>
-                  <option value="UK">United Kingdom</option>
+                  @foreach($les_agences as $agence)
+                  <option value="{{ $agence->id }}">{{ $agence->ville }}</option>
+                  @endforeach
                 </select>
               </div>
               <div class="form-group">
               <label class="col-sm-4 form-control-label">Agence: <span class="tx-danger">*</span></label>
                 <select class="form-control col-sm-10 select2" name="agence" data-placeholder="Donnez la structure">
                   <option label="Donnez l'agence"></option>
-                  <option value="USA">United States of America</option>
-                  <option value="UK">United Kingdom</option>
+                  @foreach($les_agences as $agence)
+                  <option value="{{ $agence->id }}">{{ $agence->name }}</option>
+                  @endforeach
                 </select>
               </div>
             </div><!-- col-4 -->

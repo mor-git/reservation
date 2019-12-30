@@ -8,7 +8,7 @@
     <div class="col-xl-10">
     
       <div class=" ">
-        <h6 class="br-section-label">Formulaire Structure</h6>
+        <h6 class="br-section-label">Formulaire Agent</h6>
         <p class="br-section-text">A basic form where labels are aligned in left.</p>
         <form  method="post" action="{{ url('/addAgent') }}">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
@@ -47,8 +47,9 @@
               <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                 <select class="form-control select2" name="agence" data-placeholder="Donnez la structure">
                   <option label="Donnez l'agence"></option>
-                  <option value="USA">United States of America</option>
-                  <option value="UK">United Kingdom</option>
+                  @foreach($les_agences as $agence) 
+                  <option value="{{ $agence->id }}">{{ $agence->name }}</option>
+                  @endforeach
                 </select>
               </div>
             </div><!-- col-4 -->

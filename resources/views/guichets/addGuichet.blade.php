@@ -23,8 +23,9 @@
             <div class="col-sm-8 mg-t-10 mg-sm-t-0">
               <select class="form-control select2" name="agence" data-placeholder="Donnez la structure">
                 <option label="Donnez l'agence"></option>
-                <option value="USA">United States of America</option>
-                <option value="UK">United Kingdom</option>
+                @foreach($agences as $one)
+                <option value="{{ $one->id}}">{{ $one->name}}</option>
+                @endforeach
               </select>
             </div>
         </div><!-- col-4 -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Agence;
+use App\Structure;
 
 class AgenceController extends Controller
 {
@@ -14,7 +15,8 @@ class AgenceController extends Controller
      */
     public function index()
     {
-        return view('agences.addAgence');
+        $stuctures = Structure::all();
+        return view('agences.addAgence', ['les_structures' => $stuctures]);
     }
     public function compteur(Request $request)
     {
@@ -46,13 +48,11 @@ class AgenceController extends Controller
        $agence->phone        = $params['phone'];
        $agence->login        = $params['login'];
        $agence->password     = $params['pwd'];
-       $agence->structure_id = 1;
-       //$agence->structure_id = $params['structure'];
+       $agence->structure_id = $params['structure'];
 
-       var_dump($agence);die();
-       //$agence.save();
+       $agence->save();
 
-       //return view('agences/showAgence');
+       return view('agences/showAgence');
     }
 
     /**
@@ -67,7 +67,7 @@ class AgenceController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource. 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

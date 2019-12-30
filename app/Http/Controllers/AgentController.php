@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Agent;
+use App\Agence;
 
 class AgentController extends Controller
 {
@@ -14,7 +15,8 @@ class AgentController extends Controller
      */
     public function index()
     {
-        return view('agents.addAgent');
+        $agences = Agence::all();
+        return view('agents.addAgent' , ['les_agences' => $agences ]);
     }
 
     /**
@@ -33,9 +35,8 @@ class AgentController extends Controller
         $agent->login = $params['login'];
         $agent->password = $params['pwd'];
         $agent->agence_id = $params['agence'];
-        //var_dump($agent);die();
-        //$agent->save();
         
+        $agent->save(); 
         return view('agents/showAgent');
     }
 
@@ -59,7 +60,7 @@ class AgentController extends Controller
     public function showAgent()
     {
         $agents = Agent::all();
-        return view('agents/showAgent', ['les_agents' => $agents]);
+        return view('agents.showAgent', ['les_agents' => $agents]);
     }
 
     /**
