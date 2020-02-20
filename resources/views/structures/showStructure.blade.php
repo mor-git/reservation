@@ -17,7 +17,7 @@
           <p class="mg-b-0">DataTables is a plug-in for the jQuery Javascript library.</p>
         </div>
       </div><!-- d-flex -->
-
+     
       <div class="br-pagebody">
         <div class="br-section-wrapper">
           <h6 class="br-section-label">Basic Responsive DataTable</h6>
@@ -27,43 +27,31 @@
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
                 <tr>
-                  <th class="wd-15p">First name</th>
-                  <th class="wd-15p">Last name</th>
+                  <th class="wd-20p">Number</th>
                   <th class="wd-20p">Logo</th>
-                  <th class="wd-15p">Start date</th>
-                  <th class="wd-10p">Name</th>
+                  <th class="wd-15p">Name</th>
+                  <th class="wd-20p">Type Structure</th>
                   <th class="wd-25p">Action</th>
                 </tr>
               </thead>
               <tbody>
+              <?php $i = 1; ?>
               @foreach($les_structures as $structure)
                 <tr>
-                  <td>Tiger</td>
-                  <td>Nixon</td>
-                  <td>{{ $structure->logo }}</td>
-                  <td>2011/04/25</td>
+                  <td><?php echo $i; ?></td>
+                  <td><img src="{{ asset('/storage/logos/'.$structure->logo) }}"/></td>
                   <td>{{ $structure->name }}</td>
+                  <td>{{ $structure->typeStructure->type }}</td>
                   <td>
-                     <a href="{{ url('/editStructure', $structure->id )}}" class="icon ion-iphone">Editer</a>
-                     <a href="{{ url('/editStructure', $structure->id )}}">Supprimer</a>
+                     <a href="{{ url('/editStructure', $structure->id )}}" class="icon ion-iphone">Edit</a>
+                     <a href="{{ url('/editStructure', $structure->id )}}">Supp</a>
                   </td>
                 </tr>
+                <?php $i++; ?>
               @endforeach
               </tbody>
             </table>
           </div><!-- table-wrapper -->
-
-        <script>
-        $('#datatable1').DataTable({
-        responsive: true,
-        language: {
-            searchPlaceholder: 'Recherche...',
-            sSearch: '',
-            lengthMenu: '_MENU_ items/page',
-        }
-        });
-        </script>
-                 
         </div><!-- br-section-wrapper -->
       </div><!-- br-pagebody -->
       <footer class="br-footer">

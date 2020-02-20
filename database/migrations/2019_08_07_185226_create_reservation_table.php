@@ -17,7 +17,7 @@ class CreateReservationTable extends Migration
             $table->increments('id');
             $table->dateTime('date');
             $table->string('phone');
-            $table->integer('number');
+            $table->integer('numero');
             $table->integer('agence_id')->unsigned();
             $table->foreign('agence_id')
                   ->references('id')

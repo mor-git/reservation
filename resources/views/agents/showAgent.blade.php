@@ -53,7 +53,7 @@
             </table>
           </div><!-- table-wrapper -->
 
-        <script>
+       <!--<script>
         $('#datatable1').DataTable({
         responsive: true,
         language: {
@@ -62,7 +62,7 @@
             lengthMenu: '_MENU_ items/page',
         }
         });
-        </script>
+        </script>-->
                  
         </div><!-- br-section-wrapper -->
       </div><!-- br-pagebody -->

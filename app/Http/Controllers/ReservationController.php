@@ -52,9 +52,10 @@ class ReservationController extends Controller
      */
     public function verifierReservation()
     {
-        $structures = Structure::all();
-        $agences    = Agence::all();
-        return view('reservations/verification',['les_structures'=>$structures,'les_agences'=>$agences]);
+        //$structures = Structure::all();
+       // $agences    = Agence::all();
+       // return view('reservations/verification',['les_structures'=>$structures,'les_agences'=>$agences]);
+        return view('reservations/verification');
     }
 
     /**

@@ -53,18 +53,6 @@
               </tbody>
             </table>
           </div><!-- table-wrapper -->
-
-        <script>
-        $('#datatable1').DataTable({
-        responsive: true,
-        language: {
-            searchPlaceholder: 'Recherche...',
-            sSearch: '',
-            lengthMenu: '_MENU_ items/page',
-        }
-        });
-        </script>
-                 
         </div><!-- br-section-wrapper -->
       </div><!-- br-pagebody -->
       <footer class="br-footer">

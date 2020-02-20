@@ -22,6 +22,12 @@ class CreateGuichetTable extends Migration
                 ->on('agences')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->integer('compteur_id')->unsigned();
+            $table->foreign('compteur_id')
+                ->references('id')
+                ->on('compteurs')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAgentTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,25 @@ class CreateAgentTable extends Migration
      */
     public function up()
     {
-        Schema::create('agents', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('lastName');
             $table->string('phone');
-            $table->string('login');
+            $table->string('email')->unique();
             $table->string('password');
+            $table->integer('profil_id')->unsigned();
+            $table->foreign('profil_id')
+                ->references('id')
+                ->on('profils')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->integer('agence_id')->unsigned();
             $table->foreign('agence_id')
                 ->references('id')
                 ->on('agences')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -37,6 +43,6 @@ class CreateAgentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agents');
+        Schema::dropIfExists('users');
     }
 }

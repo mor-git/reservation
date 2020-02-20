@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Guichet;
 use App\Agence;
+use App\Compteur;
 
 class GuichetController extends Controller
 {
@@ -16,7 +17,8 @@ class GuichetController extends Controller
     public function index()
     {
         $agence = Agence::all();
-        return view('guichets.addGuichet',['agences' => $agence]);
+        $compteur = Compteur::all();
+        return view('guichets.addGuichet',['agences' => $agence , 'compteurs' => $compteur]);
     }
 
     /**
@@ -29,9 +31,11 @@ class GuichetController extends Controller
         $guichet = new Guichet();
         $guichet->name = $request->nom;
         $guichet->agence_id = $request->agence;
+        $guichet->compteur_id = $request->compteur; 
 
         $guichet->save();
-        return view('guichets/showGuichet');
+        //return view('guichets/showGuichet');
+        return redirect('guichet');
     }
 
     /**
@@ -63,9 +67,11 @@ class GuichetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editGuichet($id)
     {
-        //
+        $guichet = Guichet::find($id);
+        $agences = Agence::all();
+        return view('guichets.editGuichet',['guichet' => $guichet , 'agences' => $agences]);
     }
 
     /**
@@ -75,9 +81,18 @@ class GuichetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateGuichet(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nom' => 'required',
+            'agence' => 'required'
+        ]);
+        $guichet = Guichet::find($id);
+        $guichet->name = $request->get('nom');
+        $guichet->agence_id = $request->get('agence');
+        $guichet->save();
+
+        return redirect('/showGuichets');
     }
 
     /**

@@ -9,25 +9,44 @@ use App\Structure;
 class AgenceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $stuctures = Structure::all();
-        return view('agences.addAgence', ['les_structures' => $stuctures]);
+        //return view('layouts.test');
+        return view('layouts.addStructure', ['les_structures' => $stuctures]);
+        //return view('agences.addAgence', ['les_structures' => $stuctures]);
     }
-    public function compteur(Request $request)
+    public function listeregion()
     {
-        $compte = 0;
-        if(isset($_POST['btn'])){
-            $compte = $compte + 1;
-        }else{
-            $compte;
-        }
-        return view('agences/showAgence', ['teur' => $compte]);
+        $region = array(
+            array("idR"=>1, "nomR"=>"Thies"),
+            array("idR"=>2, "nomR"=>"Tamba")
+        );
+        echo json_encode($region);
+    }
+    public function listedepartement($idR)
+    {
+        $partement = array();
 
+        if($idR == 1){
+            $partement = array(
+                array("idV"=>1, "nomV"=>"Thies", "idR"=>$idR),
+                array("idV"=>2, "nomV"=>"Tivaouane", "idR"=>$idR),
+                array("idV"=>3, "nomV"=>"Mbour", "idR"=>$idR)
+            );
+        }
+        if($idR == 2){
+            $partement = array(
+                array("idV" => 1, "nomV" => "Tamba1", "idR" => $idR),
+                array("idV" =>2, "nomV"=>"Tamba2", "idR"=>$idR),
+                array("idV"=>3, "nomV"=>"Tamba3", "idR"=>$idR)
+            );
+        }
+        echo json_encode($partement);
     }
 
     /**
@@ -39,6 +58,8 @@ class AgenceController extends Controller
     {
        $params = $request->except(['_token']);
 
+       var_dump($params);die();
+       
        $agence = new Agence();
        $agence->name         = $params['name'];
        $agence->region       = $params['region'];

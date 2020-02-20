@@ -15,8 +15,14 @@ class CreateStructureTable extends Migration
     {
         Schema::create('structures', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('logo');
+            $table->string('logo'); 
             $table->string('name');
+            $table->integer('typeStructure_id')->unsigned();
+            $table->foreign('typeStructure_id')
+                ->references('id')
+                ->on('type_structures')
+                ->onDelete('cascade')
+                ->onUpdate('cascade'); 
             $table->timestamps();
         });
     }

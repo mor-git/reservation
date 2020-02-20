@@ -150,7 +150,7 @@ body {
   line-height: 1.5;
   color: #868ba1;
   text-align: left;
-  background-color: #E9ECEF; }
+  background-color: rgb(211, 221, 235); }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -8070,6 +8070,7 @@ textarea.parsley-error:active {
 /***** FORM LAYOUT 4 & 5 *****/
 .form-layout-4,
 .form-layout-5 {
+  background-color : #E9ECEF;
   padding: 30px;
   border: 1px solid #ced4da; }
   .form-layout-4 .form-control-label,

@@ -21,8 +21,6 @@ class CreateAgenceTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('phone');
-            $table->string('login'); 
-            $table->string('password');
             $table->integer('structure_id')->unsigned();
             $table->foreign('structure_id')
                 ->references('id')

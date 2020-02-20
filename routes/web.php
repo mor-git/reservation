@@ -15,6 +15,34 @@ Route::get('/', function () {
     //return view('welcome');
     return view('index');
 });
+/**-------------------------------Routes Types Structures------------------------------ */
+Route::get('/typeStructure',[ 
+    'as' => 'typeStructure',
+    'uses' => 'TypeStructureController@index'
+]);
+Route::post('/addTypeStructure',[
+    'as' => 'createTypeStructure',
+    'uses' => 'TypeStructureController@createTypeStructure'
+]);
+Route::get('/showTypeStructures',[
+    'as' => 'showTypeStructures',
+    'uses' => 'TypeStructureController@showTypeStructure'
+]);
+/**------------------------------Fin Routes Types Structures ------------------------ */
+/**-------------------------------Routes Profils------------------------------ */
+Route::get('/profil',[
+    'as' => 'profil',
+    'uses' => 'ProfilController@index'
+]);
+Route::post('/addProfil',[
+    'as' => 'createProfil',
+    'uses' => 'ProfilController@createProfil'
+]);
+Route::get('/showProfils',[
+    'as' => 'showProfils',
+    'uses' => 'ProfilController@showProfil'
+]);
+/**------------------------------Fin Routes Profils ------------------------ */
 /**-------------------------------Routes Structures------------------------------ */
 Route::get('/structure',[
     'as' => 'structure',
@@ -24,9 +52,13 @@ Route::post('/addStructure',[
     'as' => 'createStructure',
     'uses' => 'StructureController@createStructure'
 ]);
-Route::get('/editStructure/{$id}',[
+Route::get('/editStructure/{id}',[
     'as' => 'editStructure',
     'uses' => 'StructureController@editStructure'
+]);
+Route::post('/updateStructure/{id}',[
+    'as' => 'updateStructure',
+    'uses' => 'StructureController@updateStructure'
 ]);
 Route::get('/showStructures',[
     'as' => 'showStructures',
@@ -34,6 +66,16 @@ Route::get('/showStructures',[
 ]);
 /**----------------------------Fin Routes Structures----------------------------- */
 /**-------------------------------Routes Agences--------------------------------- */
+/**--Ajax Chargement Région département--*/
+Route::get('/listeregion',[
+    'as' => 'listeregion',
+    'uses' => 'AgenceController@listeregion'
+]);
+Route::get('/listedepartement/{id}',[
+    'as' => 'listedepartement',
+    'uses' => 'AgenceController@listedepartement'
+]);
+/**--Fin Ajax Chargement Région département--*/
 Route::get('/agence',[
     'as' => 'agence',
     'uses' => 'AgenceController@index'
@@ -96,4 +138,34 @@ Route::get('/showGuichets',[
     'as' => 'showGuichets',
     'uses' => 'GuichetController@showGuichet'
 ]);
+Route::get('/editGuichet/{id}',[
+    'as' => 'editGuichet',
+    'uses' => 'GuichetController@editGuichet'
+]);
+Route::post('/updateGuichet/{id}',[
+    'as' => 'updateGuichet',
+    'uses' => 'GuichetController@updateGuichet'
+]);
 /**----------------------------Fin Routes Guichets-------------------------------- */
+/**-------------------------------Routes Compteurs------------------------------ */
+Route::get('/ticket/{id}',[
+    'as' => 'ticket',
+    'uses' => 'CompteurController@totalTicket'
+]);
+Route::get('/utiliser/{id}',[
+    'as' => 'utiliser',
+    'uses' => 'CompteurController@ticketUtilise'
+]);
+Route::get('/compteur',[
+    'as' => 'compteur',
+    'uses' => 'CompteurController@index'
+]);
+Route::post('/addCompteur',[
+    'as' => 'createCompteur',
+    'uses' => 'CompteurController@createCompteur'
+]);
+Route::get('/showCompteurs',[
+    'as' => 'showCompteurs',
+    'uses' => 'CompteurController@showCompteur'
+]);
+/**------------------------------Fin Routes Compteurs ------------------------ */

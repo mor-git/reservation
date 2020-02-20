@@ -12,6 +12,16 @@
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+            <span class="menu-item-label">Types Structures</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{ url('/typeStructure') }}" class="sub-link">New Type Structure</a></li>
+            <li class="sub-item"><a href="{{ url('/showTypeStructures') }}" class="sub-link">List Types Structures</a></li>
+          </ul>
+        </li><!-- br-menu-item -->
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">Structures</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
@@ -41,12 +51,32 @@
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
+            <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
+            <span class="menu-item-label">Compteurs</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{ url('/compteur') }}" class="sub-link">New Compteur</a></li>
+            <li class="sub-item"><a href="{{ url('/showCompteurs') }}" class="sub-link">List Compteurs</a></li>
+          </ul>
+        </li><!-- br-menu-item -->
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
             <i class="fa fa-users tx-18"></i>
-            <span class="menu-item-label">Agents</span>
+            <span class="menu-item-label">Utilisateurs</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub nav flex-column">
-            <li class="sub-item"><a href="{{ url('/agent') }}" class="sub-link">New Agent</a></li>
-            <li class="sub-item"><a href="{{ url('/showAgents') }}" class="sub-link">List Agents</a></li>
+            <li class="sub-item"><a href="{{ url('/user') }}" class="sub-link">New User</a></li>
+            <li class="sub-item"><a href="{{ url('/showUsers') }}" class="sub-link">List Users</a></li>
+          </ul>
+        </li><!-- br-menu-item -->
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-users tx-18"></i>
+            <span class="menu-item-label">Profils Utilisateurs</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub nav flex-column">
+            <li class="sub-item"><a href="{{ url('/profil') }}" class="sub-link">New Profil</a></li>
+            <li class="sub-item"><a href="{{ url('/showProfil') }}" class="sub-link">List Profils</a></li>
           </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
@@ -193,7 +223,6 @@
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
         </nav>
-    
       </div><!-- br-header-right -->
     </div><!-- br-header -->
     <!-- ########## END: HEAD PANEL ########## -->

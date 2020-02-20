@@ -32,33 +32,22 @@
                   <th class="wd-20p">Agence</th>
                   <th class="wd-25p">Action</th>
                 </tr>
-              </thead>
-              <tbody>*
+              </thead> 
+              <tbody>
               @foreach($les_guichets as $guichet)
                 <tr>
                   <td>Num</td>
                   <td>{{ $guichet->name }}</td>
                   <td>{{ $guichet->agences->name }}</td>
                   <td>
-                      <a href="" >Editer</a>
-                      <a href="" >Supprimer</a>
+                      <a href="{{ url('/editGuichet', $guichet->id) }}" >Editer</a>
+                      <a href="{{ url('/editGuichet', $guichet->id ) }}" >Supprimer</a>
                   </td>
                 </tr>
               @endforeach
               </tbody>
             </table>
           </div><!-- table-wrapper -->
-
-        <script>
-        $('#datatable1').DataTable({
-        responsive: true,
-        language: {
-            searchPlaceholder: 'Recherche...',
-            sSearch: '',
-            lengthMenu: '_MENU_ items/page',
-        }
-        });
-        </script>
                  
         </div><!-- br-section-wrapper -->
       </div><!-- br-pagebody -->
@@ -76,3 +65,15 @@
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 @endsection
+<!--@section('script')
+<script>
+  $('#datatable1').DataTable({ 
+        responsive: true,
+        language: {
+            searchPlaceholder: 'Recherche...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+        }
+        });
+</script>
+@endsection-->

@@ -14,26 +14,26 @@
       <div class="br-pagebody">
         <div class="row row-sm">
           <div class="col-sm-6 col-xl-3">
-            <div class="bg-info rounded overflow-hidden">
+            <div class="bg-info rounded overflow-hidden" id="monDiv1">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
                 <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Today's Visits</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">1,975,224</p>
-                  <span class="tx-11 tx-roboto tx-white-8">24% higher yesterday</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Total</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1" ><span id="compteur1">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
                 </div>
               </div>
               <div id="ch1" class="ht-50 tr-y-1"></div>
             </div>
-          </div><!-- col-3 -->
+          </div><!-- col-3     1,975,224  -->
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
             <div class="bg-purple rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-bag tx-60 lh-0 tx-white op-7"></i>
+                <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Today Sales</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">$329,291</p>
-                  <span class="tx-11 tx-roboto tx-white-8">$390,212 before tax</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">RESERVATION</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur3">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
                 </div>
               </div>
               <div id="ch3" class="ht-50 tr-y-1"></div>
@@ -44,22 +44,22 @@
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
                 <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">% Unique Visits</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">54.45%</p>
-                  <span class="tx-11 tx-roboto tx-white-8">23% average duration</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">En attente</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur4">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
                 </div>
               </div>
               <div id="ch2" class="ht-50 tr-y-1"></div>
             </div>
           </div><!-- col-3 -->
-          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0" id="monDiv2">
             <div class="bg-primary rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
                 <i class="ion ion-clock tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Bounce Rate</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">32.16%</p>
-                  <span class="tx-11 tx-roboto tx-white-8">65.45% on average time</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Numéro Appeler</p>
+                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur2">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
                 </div>
               </div>
               <div id="ch4" class="ht-50 tr-y-1"></div>
@@ -67,7 +67,6 @@
           </div><!-- col-3 -->
         </div><!-- row -->
 
-        
             <div class="card shadow-base bd-0 pd-25 mg-t-20">
               <div class="d-md-flex justify-content-between align-items-center">
                 <div>
@@ -111,7 +110,7 @@
                   </div>
                 </div><!-- col-4 -->
               </div><!-- row -->
-
+              
             </div><!-- card -->
       </div><!-- br-pagebody -->
       <footer class="br-footer">
@@ -127,6 +126,30 @@
       </footer>
     </div><!-- br-mainpanel -->
 <!-- ########## END: MAIN PANEL ########## -->
+<script>
+  $(document).ready(function(){
+      var cpt = 0;
+      $('#monDiv1').click(function(){
+         var compt = parseInt($('#compteur1').text()) + 1;
+         $('#compteur1').text(compt);
+         cpt = compt;
+      });
+      $('#monDiv2').click(function(){
+         var compt2 = parseInt($('#compteur2').text()) + 1;
+         
+         if(compt2 <= cpt){
+            $('#compteur2').text(compt2);
+            var compt4 = cpt - compt2;
+            $('#compteur4').text(compt4);
+         }else{
+            $('#compteur2').text("Total Atteint");
+            
+            $('#compteur4').text("Total Atteint");
+         }
+         
+      });
+  });
+</script>
 @endsection
 
     

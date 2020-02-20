@@ -17,11 +17,17 @@
             <input type="text" name="name" class="form-control" placeholder="Name">
           </div>
         </div><!-- row -->
-        <div class="row mg-t-10">
-          <label class="col-sm-2 form-control-label">Région: <span class="tx-danger">*</span></label>
-          <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-            <input type="text" class="form-control" name="region" placeholder="Région">
-          </div>
+        <div class="form-group row mg-t-10">
+            <label for="region" class="col-sm-2 form-control-label">Région: <span class="tx-danger">*</label>
+            <select  class="form-control col-sm-8 mg-t-10 mg-sm-t-0" name="region" id="region">
+              <option value="">Choix</option>
+            </select>
+        </div>
+        <div class="form-group row mg-t-10">
+            <label for="region" class="col-sm-2 form-control-label">Ville: <span class="tx-danger">*</label>
+            <select  class="form-control col-sm-8 mg-t-10 mg-sm-t-0" name="ville" id="ville">
+              <option value="">Choix</option>
+            </select>
         </div>
         <div class="row mg-t-10">
           <label class="col-sm-2 form-control-label">Ville: <span class="tx-danger">*</span></label>
@@ -82,4 +88,37 @@
   
 </di>
 </center>
+@endsection
+
+@section('script')
+<script>
+  $(document).ready(function(){
+    
+      $.ajax({
+              url : "http://localhost:8000/listeregion",
+              dateType : "json",
+              success:function(data){
+                $.each(JSON.parse(data), function(cle, valeur){
+                  $("#region").append("<option value='"+valeur.idR+"'>"+valeur.nomR+"</option>");
+                });
+              }
+          })
+      $("#region").change(function(){
+        $("#ville").empty();
+        $("#ville").append("<option value=''>Choix</option>");
+        var lis = $("#region").val();
+    
+        $.ajax({
+            url : "http://localhost:8000/listedepartement/"+lis,
+            dateType : "json",
+            success:function(data){
+              $.each(JSON.parse(data), function(cle, valeur){
+                $("#ville").append("<option value='"+valeur.idV+"'>"+valeur.nomV+"</option>");
+              });
+            }
+        })
+        
+      });
+  });
+</script>
 @endsection
