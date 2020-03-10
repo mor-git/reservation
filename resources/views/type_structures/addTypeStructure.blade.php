@@ -9,9 +9,22 @@
         color : black;
       }
 </style>
+<div class="br-mainpanel">
+  <div class="br-pageheader">
+    <nav class="breadcrumb pd-0 mg-0 tx-12">
+      <a class="breadcrumb-item" href="index.html">Bracket</a>
+      <a class="breadcrumb-item" href="#">Forms</a>
+      <span class="breadcrumb-item active">Form Wizards</span>
+    </nav>
+  </div><!-- br-pageheader -->
+  <div class="br-pagetitle">
+    <div>
+      <h4>Form Wizards</h4>
+    </div>
+  </div><!-- d-flex -->
 <div class="container">
-<div style="margin-left : 150px">
-  <div class="row mg-t-100">
+<div style="margin-left : 100px">
+  <div class="row mg-t-10">
     <div class="col-xl-8">
     
       <div class="form-layout form-layout-4 ">
@@ -35,6 +48,7 @@
     <div id="partieAjax"  ></div>
     </div>
   </div><!-- row -->
+</div>
 </div>
 </div>
 </center>

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Agent;
+use App\User;
 use App\Agence;
+use App\Profil;
 
-class AgentController extends Controller
+class MyUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,23 @@ class AgentController extends Controller
     public function index()
     {
         $agences = Agence::all();
-        return view('agents.addAgent' , ['les_agences' => $agences ]);
+        $profils = Profil::all();
+        return view('users.addUsers' , ['les_agences' => $agences, 'les_profils' => $profils]);
+    }
+
+    public function seloger(Request $request)
+    {
+        $mail = $request->input('email');
+        $pwd  = $request->input('password');
+
+        $user = User::where('email', $mail)->first();
+        //var_dump($user);die();
+        if($user){
+            return view('index');
+        }else{
+            redirect('/');
+        }
+        
     }
 
     /**
@@ -24,20 +41,20 @@ class AgentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createAgent(Request $request)
-    {
+    public function createUser(Request $request)
+    { 
         $params = $request->except(['_token']);
-
-        $agent = new Agent();
-        $agent->name = $params['name'];
-        $agent->lastName = $params['last'];
-        $agent->phone = $params['phone'];
-        $agent->login = $params['login'];
-        $agent->password = $params['pwd'];
-        $agent->agence_id = $params['agence'];
         
-        $agent->save(); 
-        return view('agents/showAgent');
+        $user = new User();
+        $user->name = $params['name'];
+        $user->phone = $params['phone'];
+        $user->email = $params['mail'];
+        $user->password = bcrypt($params['password']);
+        $user->agence_id = $params['agence'];
+        $user->profil_id = $params['profil'];
+        
+        $user->save(); 
+        return redirect('showUsers');
     }
 
     /**
@@ -57,10 +74,10 @@ class AgentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showAgent()
+    public function showUser()
     {
-        $agents = Agent::all();
-        return view('agents.showAgent', ['les_agents' => $agents]);
+        $users = User::all();
+        return view('users.showUsers', ['les_users' => $users]);
     }
 
     /**

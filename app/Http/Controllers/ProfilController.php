@@ -20,4 +20,10 @@ class ProfilController extends Controller
         
         return redirect('profil');
     }
+
+    public function showProfil()
+    {
+        $profils = Profil::all();
+        return view('profils/showProfil', ['les_profils' => $profils]);
+    }
 }

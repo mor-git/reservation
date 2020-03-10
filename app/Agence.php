@@ -12,7 +12,7 @@ class Agence extends Model
     public function guichets(){
         return $this->howMany('App\Guichet');
     }
-    public function agents(){
-        return $this->howMany('App\Agent');
+    public function users(){
+        return $this->howMany('App\User');
     }
 }

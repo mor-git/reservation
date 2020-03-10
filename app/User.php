@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','phone', 'email', 'password' , 'profil_id', 'agence_id',
     ];
 
     /**
@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function agences(){
+        return $this->belongsTo('App\Agence', 'agence_id');
+    }
+
+    public function profils(){
+        return $this->belongsTo('App\Profil', 'profil_id');
+    }
 }

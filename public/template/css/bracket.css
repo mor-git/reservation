@@ -150,7 +150,10 @@ body {
   line-height: 1.5;
   color: #868ba1;
   text-align: left;
-  background-color: rgb(211, 221, 235); }
+  /*background-color: rgb(211, 221, 235);*/
+  background-color : #fff;
+
+}
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -8070,7 +8073,7 @@ textarea.parsley-error:active {
 /***** FORM LAYOUT 4 & 5 *****/
 .form-layout-4,
 .form-layout-5 {
-  background-color : #E9ECEF;
+  background-color : #f8f9fa;
   padding: 30px;
   border: 1px solid #ced4da; }
   .form-layout-4 .form-control-label,
@@ -13741,10 +13744,11 @@ table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::
   letter-spacing: 1px;
   margin-top: 40px;
   margin-bottom: 10px;
-  color: #6c757d; }
+  color: #6c757d; } 
 
 .br-section-wrapper {
-  background-color: #fff;
+  background-color: #f8f9fa;
+  /*background-color: #fff;*/
   padding: 30px 20px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);
   border-radius: 3px; }

@@ -27,7 +27,7 @@ class TypeStructureController extends Controller
     public function showTypeStructure()
     {
         $structures_type = TypeStructure::all();
-        return view('type_structures/showTypeStructure', ['les_structures' => $structures_type]);
+        return view('type_structures/showTypeStructure', ['les_types_structures' => $structures_type]);
     }
 
     public function editTypeStructure($id)

@@ -1,14 +1,15 @@
  <!-- ########## START: LEFT PANEL ########## -->
- <div class="br-logo"><a href="{{ url('/') }}"><span>[</span>bracket <i>plus</i><span>]</span></a></div>
+ <div class="br-logo"><a href="{{ url('/accueil') }}"><span>[</span>Yombal <i>plus</i><span>]</span></a></div>
     <div class="br-sideleft sideleft-scrollbar">
       <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
       <ul class="br-sideleft-menu">
         <li class="br-menu-item">
-          <a href="{{ url('/') }}" class="br-menu-link active">
+          <a href="{{ url('/accueil') }}" class="br-menu-link active">
             <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
             <span class="menu-item-label">Dashboard</span>
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
+        @if ( Auth::user()->profil_id == 1)
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
@@ -65,7 +66,7 @@
             <span class="menu-item-label">Utilisateurs</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub nav flex-column">
-            <li class="sub-item"><a href="{{ url('/user') }}" class="sub-link">New User</a></li>
+            <li class="sub-item"><a href="{{ url('/users') }}" class="sub-link">New User</a></li>
             <li class="sub-item"><a href="{{ url('/showUsers') }}" class="sub-link">List Users</a></li>
           </ul>
         </li><!-- br-menu-item -->
@@ -76,7 +77,7 @@
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub nav flex-column">
             <li class="sub-item"><a href="{{ url('/profil') }}" class="sub-link">New Profil</a></li>
-            <li class="sub-item"><a href="{{ url('/showProfil') }}" class="sub-link">List Profils</a></li>
+            <li class="sub-item"><a href="{{ url('/showProfils') }}" class="sub-link">List Profils</a></li>
           </ul>
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
@@ -95,6 +96,24 @@
             <span class="menu-item-label">Reservations</span>
           </a>--><!-- br-menu-link -->
         <!--</li>--><!-- br-menu-item -->
+        @elseif ( Auth::user()->profil_id == 2)
+            <li class="br-menu-item">
+              <a href="#" class="br-menu-link with-sub">
+                <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
+                <span class="menu-item-label">Guichets</span>
+              </a><!-- br-menu-link -->
+              <ul class="br-menu-sub">
+                <li class="sub-item"><a href="{{ url('/guichet') }}" class="sub-link">New Guichet</a></li>
+                <li class="sub-item"><a href="{{ url('/showGuichets') }}" class="sub-link">List Guichets</a></li>
+              </ul>
+            </li><!-- br-menu-item -->
+        @else
+            <br><br>
+            <li class="br-menu-item">
+              <h5>Faire avancer le compteur suivant les clients  !!!</h5>
+              <h5>Quant on termine avec un client, on appuie sur avancer pour appeler le suivant !!!</h5>
+            </li>
+        @endif
       </ul><!-- br-sideleft-menu -->
     </div><!-- br-sideleft -->
 <!-- ########## END: LEFT PANEL ########## -->
@@ -202,15 +221,16 @@
           </div><!-- dropdown -->
           <div class="dropdown">
             <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-              <span class="logged-name hidden-md-down">Katherine</span>
+              <span class="logged-name hidden-md-down">{{ Auth::user()->name }}</span>
               <img src="https://via.placeholder.com/500" class="wd-32 rounded-circle" alt="">
               <span class="square-10 bg-success"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-250">
               <div class="tx-center">
                 <a href=""><img src="https://via.placeholder.com/500" class="wd-80 rounded-circle" alt=""></a>
-                <h6 class="logged-fullname">Katherine P. Lumaad</h6>
-                <p>youremail@domain.com</p>
+                <h6 class="logged-fullname">{{ Auth::user()->name }}</h6>
+                <p>{{ Auth::user()->email }}</p>
+                <p>{{ Auth::user()->profils->libelle }}</p>
               </div>
               <hr>
               
@@ -218,7 +238,15 @@
               <ul class="list-unstyled user-profile-nav">
                 <li><a href=""><i class="icon ion-ios-person"></i> Edit Profile</a></li>
                 <li><a href=""><i class="icon ion-ios-gear"></i> Settings</a></li>
-                <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+                <li><a href="{{ route('logout') }}" 
+                                  onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                        <i class="icon ion-power"></i> Sign Out
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
               </ul>
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->

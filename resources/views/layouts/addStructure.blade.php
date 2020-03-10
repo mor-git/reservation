@@ -2,7 +2,7 @@
  
 @section('contenu')
 
-    <!-- ########## START: MAIN PANEL ########## -->
+    <!-- ########## START: MAIN PANEL ########## --> 
     <div class="br-mainpanel">
       <div class="br-pageheader">
         <nav class="breadcrumb pd-0 mg-0 tx-12">

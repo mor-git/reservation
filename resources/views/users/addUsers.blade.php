@@ -23,18 +23,36 @@
 <div class="container">
 <div style="margin-left : 70px">
   <div class="row mg-t-10">
-    <div class="col-xl-8">
+    <div class="col-xl-8">,
     <div id="erreur"></div>
       <div class="form-layout form-layout-4 ">
-        <h6 class="br-section-label">Formulaire Guichet</h6>
-        <p class="br-section-text">A basic form where labels are aligned in left.</p>
+        <!--<h6 class="br-section-label">Formulaire Users</h6>
+        <p class="br-section-text">A basic form where labels are aligned in left.</p>-->
         <!--{{ url('/addGuichet') }}-->
-        <form  method="post" action="{{ url('/addGuichet') }}" id="form">
+        <form  method="POST" action="{{ url('/addUser') }}" id="form">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <div class="row">
               <label class="col-sm-2 form-control-label">Name: <span class="tx-danger">*</span></label>
               <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                <input type="text" id="nom" name="nom" class="form-control" placeholder="Name">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+              </div>
+            </div><!-- row -->
+            <div class="row mg-t-10">
+              <label class="col-sm-2 form-control-label">Phone: <span class="tx-danger">*</span></label>
+              <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone" required>
+              </div>
+            </div><!-- row -->
+            <div class="row mg-t-10">
+              <label class="col-sm-2 form-control-label">Email: <span class="tx-danger">*</span></label>
+              <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                <input type="email" id="mail" name="mail" class="form-control" placeholder="Email" required>
+              </div>
+            </div><!-- row -->
+            <div class="row mg-t-10">
+              <label class="col-sm-2 form-control-label">Password: <span class="tx-danger">*</span></label>
+              <div class="col-sm-8 mg-t-10 mg-sm-t-0">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
               </div>
             </div><!-- row -->
             <div class="row mg-t-10">
@@ -42,19 +60,19 @@
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
                   <select class="form-control select2" name="agence" data-placeholder="Donnez la structure" id="agence">
                     <option label="Donnez l'agence"></option>
-                    @foreach($agences as $one)
+                    @foreach($les_agences as $one)
                     <option value="{{ $one->id}}">{{ $one->name}}</option>
                     @endforeach
                   </select>
                 </div>
             </div><!-- col-4 -->
             <div class="row mg-t-10">
-                <label class="col-sm-2 form-control-label">Compteur: <span class="tx-danger">*</span></label>
+                <label class="col-sm-2 form-control-label">Profil: <span class="tx-danger">*</span></label>
                 <div class="col-sm-8 mg-t-10 mg-sm-t-0">
-                  <select class="form-control select2" name="compteur" data-placeholder="Donnez le Compteur" id="compteur">
+                  <select class="form-control select2" name="profil" data-placeholder="Donnez le Profil" id="profil">
                     <option label="Choix d'un Compteur"></option>
-                    @foreach($compteurs as $cpt)
-                    <option value="{{ $cpt->id}}">{{ $cpt->libelle}}</option>
+                    @foreach($les_profils as $profil)
+                    <option value="{{ $profil->id}}">{{ $profil->libelle}}</option>
                     @endforeach
                   </select>
                 </div>
@@ -85,7 +103,7 @@
 </div>
 </center>
 <script>
-$(document).ready(function(){
+/*$(document).ready(function(){
 
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
@@ -111,6 +129,6 @@ $(document).ready(function(){
         });
     return false;
   });
-});
+});*/
 </script>
 @endsection

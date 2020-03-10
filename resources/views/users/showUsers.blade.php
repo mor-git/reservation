@@ -17,7 +17,7 @@
           <p class="mg-b-0">DataTables is a plug-in for the jQuery Javascript library.</p>
         </div>
       </div><!-- d-flex -->
-     
+
       <div class="br-pagebody">
         <div class="br-section-wrapper">
           <h6 class="br-section-label">Basic Responsive DataTable</h6>
@@ -27,27 +27,34 @@
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
                 <tr>
-                  <th class="wd-20p">Number</th>
-                  <th class="wd-20p">Name</th>
+                  <th class="wd-15p">Number</th>
+                  <th class="wd-15p">Name</th>
+                  <th class="wd-15p">Phone</th>
+                  <th class="wd-15p">Email</th>
+                  <th class="wd-20p">Agence</th>
+                  <th class="wd-20p">Profil</th>
                   <th class="wd-25p">Action</th>
                 </tr>
-              </thead>
+              </thead> 
               <tbody>
-              <?php $i = 1; ?>
-              @foreach($les_types_structures as $structure)
+              @foreach($les_users as $user)
                 <tr>
-                  <td><?php echo $i; ?></td>
-                  <td>{{ $structure->type }}</td>
+                  <td>Num</td>
+                  <td>{{ $user->name }}</td>
+                  <td>{{ $user->phone }}</td>
+                  <td>{{ $user->email }}</td>
+                  <td>{{ $user->agences->name }}</td>
+                  <td>{{ $user->profils->libelle }}</td>
                   <td>
-                     <a href="{{ url('/editStructure', $structure->id )}}" class="icon ion-iphone">Edit</a>
-                     <a href="{{ url('/editStructure', $structure->id )}}">Supp</a>
+                      <a href="{{ url('/editUser', $user->id) }}" >Edit</a>
+                      <a href="{{ url('/editUser', $user->id ) }}" >Supp</a>
                   </td>
                 </tr>
-                <?php $i++; ?>
               @endforeach
               </tbody>
             </table>
           </div><!-- table-wrapper -->
+                 
         </div><!-- br-section-wrapper -->
       </div><!-- br-pagebody -->
       <footer class="br-footer">
@@ -64,3 +71,15 @@
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 @endsection
+<!--@section('script')
+<script>
+  $('#datatable1').DataTable({ 
+        responsive: true,
+        language: {
+            searchPlaceholder: 'Recherche...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+        }
+        });
+</script>
+@endsection-->

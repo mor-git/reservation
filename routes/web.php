@@ -13,8 +13,13 @@
 
 Route::get('/', function () {
     //return view('welcome');
+    return view('login');
+});
+/**-------------------------------Route Pour la Page D'accueil ------------------------------ */
+Route::get('/accueil', function () {
     return view('index');
 });
+/**-------------------------------Fin Route Pour la Page D'accueil ------------------------------ */
 /**-------------------------------Routes Types Structures------------------------------ */
 Route::get('/typeStructure',[ 
     'as' => 'typeStructure',
@@ -33,6 +38,10 @@ Route::get('/showTypeStructures',[
 Route::get('/profil',[
     'as' => 'profil',
     'uses' => 'ProfilController@index'
+]);
+Route::get('/editProfil',[
+    'as' => 'editProfil',
+    'uses' => 'ProfilController@editProfil'
 ]);
 Route::post('/addProfil',[
     'as' => 'createProfil',
@@ -112,17 +121,21 @@ Route::post('/valider',[
 ]);
 /**----------------------------Fin Routes Reservations--------------------------- */
 /**-------------------------------Routes Agents---------------------------------- */
-Route::get('/agent',[
-    'as' => 'agent',
-    'uses' => 'AgentController@index'
+Route::get('/users',[
+    'as' => 'users',
+    'uses' => 'MyUserController@index'
 ]);
-Route::post('/addAgent',[
-    'as' => 'createAgent',
-    'uses' => 'AgentController@createAgent'
+Route::post('/addUser',[
+    'as' => 'addUser',
+    'uses' => 'MyUserController@createUser'
 ]);
-Route::get('/showAgents',[
-    'as' => 'showAgents',
-    'uses' => 'AgentController@showAgent'
+Route::post('/loger',[
+    'as' => 'loger',
+    'uses' => 'MyUserController@seloger'
+]);
+Route::get('/showUsers',[
+    'as' => 'showUsers',
+    'uses' => 'MyUserController@showUser'
 ]);
 /**----------------------------Fin Routes Agents--------------------------------- */
 /**-------------------------------Routes Guichets-------------------------------- */
@@ -169,3 +182,6 @@ Route::get('/showCompteurs',[
     'uses' => 'CompteurController@showCompteur'
 ]);
 /**------------------------------Fin Routes Compteurs ------------------------ */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
