@@ -21,6 +21,18 @@ class CreateAgenceTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('phone');
+            $table->integer('region_id')->unsigned();
+            $table->foreign('region_id')
+                ->references('id')
+                ->on('regions')
+                ->onDelete('cascade')
+                ->onUpdate('cascade'); 
+            $table->integer('ville_id')->unsigned();
+            $table->foreign('ville_id')
+                ->references('id')
+                ->on('villes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade'); 
             $table->integer('structure_id')->unsigned();
             $table->foreign('structure_id')
                 ->references('id')

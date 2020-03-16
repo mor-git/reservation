@@ -9,7 +9,6 @@
     <form method="post" action="{{ url('/addAgence') }}" >
       <div class="form-layout form-layout-4">
         <h6 class="">Formulaire Agence</h6>
-        
         <input type="hidden" value="{{csrf_token()}}" name="_token" />
         <div class="row">
           <label class="col-sm-2 form-control-label">Name: <span class="tx-danger">*</span></label>
@@ -91,7 +90,7 @@
 @endsection
 
 @section('script')
-<script>
+<!--<script>
   $(document).ready(function(){
     
       $.ajax({
@@ -120,5 +119,5 @@
         
       });
   });
-</script>
+</script>-->
 @endsection

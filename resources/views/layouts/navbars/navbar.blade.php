@@ -1,5 +1,5 @@
  <!-- ########## START: LEFT PANEL ########## -->
- <div class="br-logo"><a href="{{ url('/accueil') }}"><span>[</span>Yombal <i>plus</i><span>]</span></a></div>
+ <div class="br-logo"><a href="{{ url('/accueil') }}"><span>[</span>Yom<i>Bal</i><span>]</span><!--<span>[</span>Yombal <i>plus</i><span>]</span>--></a></div>
     <div class="br-sideleft sideleft-scrollbar">
       <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
       <ul class="br-sideleft-menu">
@@ -96,6 +96,26 @@
             <span class="menu-item-label">Reservations</span>
           </a>--><!-- br-menu-link -->
         <!--</li>--><!-- br-menu-item -->
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-users tx-18"></i>
+            <span class="menu-item-label">Région</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub nav flex-column">
+            <li class="sub-item"><a href="{{ url('/region') }}" class="sub-link">New Région</a></li>
+            <li class="sub-item"><a href="{{ url('/showRegions') }}" class="sub-link">List Régions</a></li>
+          </ul>
+        </li><!-- br-menu-item -->
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="fa fa-users tx-18"></i>
+            <span class="menu-item-label">Ville</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub nav flex-column">
+            <li class="sub-item"><a href="{{ url('/ville') }}" class="sub-link">New Ville</a></li>
+            <li class="sub-item"><a href="{{ url('/showVilles') }}" class="sub-link">List Ville</a></li>
+          </ul>
+        </li><!-- br-menu-item -->
         @elseif ( Auth::user()->profil_id == 2)
             <li class="br-menu-item">
               <a href="#" class="br-menu-link with-sub">

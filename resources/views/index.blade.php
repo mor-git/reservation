@@ -114,9 +114,9 @@
               <div id="ch4" class="ht-50 tr-y-1"></div>
             </div>
           </div><!-- col-3 --> 
-          <div class="row mg-l-1 mg-t-20 btn-block">
+          <!--<div class="row mg-l-1 mg-t-20 btn-block">
               <input name="" class="btn btn-primary btn-block" type="button" value="Suivant">
-          </div>
+          </div>-->
         </div><!-- row -->
       </div>
       @else

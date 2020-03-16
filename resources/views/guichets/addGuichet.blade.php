@@ -21,7 +21,7 @@
       </div>
     </div><!-- d-flex -->
 <div class="container">
-<div style="margin-left : 70px">
+<div style="margin-left : 70px"> 
   <div class="row mg-t-10">
     <div class="col-xl-8">
     <div id="erreur"></div>

@@ -182,6 +182,38 @@ Route::get('/showCompteurs',[
     'uses' => 'CompteurController@showCompteur'
 ]);
 /**------------------------------Fin Routes Compteurs ------------------------ */
+/**-------------------------------Routes Régions------------------------------ */
+Route::get('/region',[ 
+    'as' => 'region',
+    'uses' => 'RegionController@index'
+]);
+Route::post('/addRegion',[
+    'as' => 'createRegion',
+    'uses' => 'RegionController@createRegion'
+]);
+Route::get('/showRegions',[
+    'as' => 'showRegions',
+    'uses' => 'RegionController@showRegion'
+]);
+/**------------------------------Fin Routes Régions -------------------------------- */
+/**-------------------------------Routes Villes------------------------------------- */
+Route::get('/ville',[ 
+    'as' => 'ville',
+    'uses' => 'VilleController@index'
+]);
+Route::post('/addVille',[
+    'as' => 'createVille',
+    'uses' => 'VilleController@createVille'
+]);
+Route::get('/showVilles',[
+    'as' => 'showVilles',
+    'uses' => 'VilleController@showVille'
+]);
+Route::get('/selectVille/{id}',[ 
+    'as' => 'selectVille',
+    'uses' => 'VilleController@selectVille'
+]);
+/**------------------------------Fin Routes Villes ------------------------------- */
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

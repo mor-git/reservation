@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Agence;
 use App\Structure;
+use App\Region;
+use App\Ville;
 
 class AgenceController extends Controller
 {
@@ -16,9 +18,11 @@ class AgenceController extends Controller
     public function index()
     {
         $stuctures = Structure::all();
+        $regions   = Region::all();
+        $villes    = Ville::all();
         //return view('layouts.test');
-        return view('layouts.addStructure', ['les_structures' => $stuctures]);
-        //return view('agences.addAgence', ['les_structures' => $stuctures]);
+        //return view('layouts.addStructure', ['les_structures' => $stuctures]);
+        return view('agences.addAgences', ['les_structures' => $stuctures, 'les_regions' => $regions, 'les_villes' => $villes,]);
     }
     public function listeregion()
     {
@@ -28,7 +32,12 @@ class AgenceController extends Controller
         );
         echo json_encode($region);
     }
-    public function listedepartement($idR)
+    public function showRegion()
+    {
+        $region = Region::all();
+        return $region;
+    }
+    public function selectVille($idR)
     {
         $partement = array();
 

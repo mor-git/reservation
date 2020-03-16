@@ -21,8 +21,8 @@
         <div class="br-section-wrapper">
           
         <!--<h6 class="br-section-label">Basic Form Wizard with Validation</h6>-->
-        <form method="POST" action="{{ url('/addAgence')}}">
-        <div id="wizard2">
+        <form method="POST" action="{{ url('/addAgence') }}">
+        <div id="wizard2"> 
             <h3>Agence Information</h3>
             <section>
               <input type="hidden" value="{{csrf_token()}}" name="_token" />
@@ -74,6 +74,9 @@
                 <input id="lng" class="form-control" name="lng" readonly type="text">
               </div><!-- form-group -->
             </section>
+        </div>
+        <div class="mg-t-10">
+          <input name="btn" class="btn btn-primary btn-block" type="button" value="Valider">
         </div>
       </form>
       </div><!-- br-section-wrapper -->
