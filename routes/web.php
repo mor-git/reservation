@@ -76,13 +76,14 @@ Route::get('/showStructures',[
 /**----------------------------Fin Routes Structures----------------------------- */
 /**-------------------------------Routes Agences--------------------------------- */
 /**--Ajax Chargement Région département--*/
-Route::get('/listeregion',[
-    'as' => 'listeregion',
-    'uses' => 'AgenceController@listeregion'
+
+Route::get('/listRegion',[
+    'as' => 'listRegion',
+    'uses' => 'AgenceController@listRegion'
 ]);
-Route::get('/listedepartement/{id}',[
-    'as' => 'listedepartement',
-    'uses' => 'AgenceController@listedepartement'
+Route::get('/listVille/{id}',[
+    'as' => 'listVille',
+    'uses' => 'AgenceController@listVilleById'
 ]);
 /**--Fin Ajax Chargement Région département--*/
 Route::get('/agence',[
@@ -208,10 +209,6 @@ Route::post('/addVille',[
 Route::get('/showVilles',[
     'as' => 'showVilles',
     'uses' => 'VilleController@showVille'
-]);
-Route::get('/selectVille/{id}',[ 
-    'as' => 'selectVille',
-    'uses' => 'VilleController@selectVille'
 ]);
 /**------------------------------Fin Routes Villes ------------------------------- */
 Auth::routes();

@@ -24,40 +24,19 @@ class AgenceController extends Controller
         //return view('layouts.addStructure', ['les_structures' => $stuctures]);
         return view('agences.addAgences', ['les_structures' => $stuctures, 'les_regions' => $regions, 'les_villes' => $villes,]);
     }
-    public function listeregion()
-    {
-        $region = array(
-            array("idR"=>1, "nomR"=>"Thies"),
-            array("idR"=>2, "nomR"=>"Tamba")
-        );
-        echo json_encode($region);
-    }
-    public function showRegion()
+    public function listRegion()
     {
         $region = Region::all();
-        return $region;
+        echo json_encode($region);
+        //echo $region;
+        //return $region;
     }
-    public function selectVille($idR)
+    public function listVilleById($id)
     {
-        $partement = array();
-
-        if($idR == 1){
-            $partement = array(
-                array("idV"=>1, "nomV"=>"Thies", "idR"=>$idR),
-                array("idV"=>2, "nomV"=>"Tivaouane", "idR"=>$idR),
-                array("idV"=>3, "nomV"=>"Mbour", "idR"=>$idR)
-            );
-        }
-        if($idR == 2){
-            $partement = array(
-                array("idV" => 1, "nomV" => "Tamba1", "idR" => $idR),
-                array("idV" =>2, "nomV"=>"Tamba2", "idR"=>$idR),
-                array("idV"=>3, "nomV"=>"Tamba3", "idR"=>$idR)
-            );
-        }
-        echo json_encode($partement);
+        $ville = Ville::where('region_id', $id)->get();
+        echo json_encode($ville);
+        //return $ville;
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -66,23 +45,19 @@ class AgenceController extends Controller
     public function createAgence(Request $request)
     {
        $params = $request->except(['_token']);
-
-       var_dump($params);die();
        
        $agence = new Agence();
        $agence->name         = $params['name'];
        $agence->region       = $params['region'];
        $agence->ville        = $params['ville'];
-       $agence->latitude     = $params['latitude'];
-       $agence->longitude    = $params['longitude'];
+       $agence->latitude     = $params['lat'];
+       $agence->longitude    = $params['lng'];
        $agence->phone        = $params['phone'];
-       $agence->login        = $params['login'];
-       $agence->password     = $params['pwd'];
        $agence->structure_id = $params['structure'];
 
        $agence->save();
 
-       return view('agences/showAgence');
+       return redirect('showAgences');
     }
 
     /**

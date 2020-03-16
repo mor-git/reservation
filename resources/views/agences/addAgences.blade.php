@@ -50,7 +50,7 @@
                 <div class="row mg-t-10">
                     <label class="col-sm-3 form-control-label">Région: <span class="tx-danger">*</span></label>
                     <div class="col-sm-9 mg-t-10 mg-sm-t-0">
-                        <select class="form-control select2" name="region" data-placeholder="Donnez la Région">
+                        <select class="form-control select2" name="region" id="region" data-placeholder="Donnez la Région">
                             <option label="Donnez la Région"></option>
                             
                         </select>
@@ -59,7 +59,7 @@
                 <div class="row mg-t-10"> 
                     <label class="col-sm-3 form-control-label">Ville: <span class="tx-danger">*</span></label>
                     <div class="col-sm-9 mg-t-10 mg-sm-t-0">
-                        <select class="form-control select2" name="ville" data-placeholder="Donnez la Ville">
+                        <select class="form-control select2" name="ville" id="ville" data-placeholder="Donnez la Ville">
                             <option label="Donnez la Ville"></option>
                             
                         </select>
@@ -162,25 +162,27 @@ $(document).ready(function(){
   $(document).ready(function(){
     
       $.ajax({
-              url : "http://localhost:8000/showRegions",
+              url : "http://localhost:8000/listRegion",
               dateType : "json",
               success:function(data){
+                //console.log(data);
                 $.each(JSON.parse(data), function(cle, valeur){
-                  $("#region").append("<option value='"+valeur.idR+"'>"+valeur.nomR+"</option>");
+                  $("#region").append("<option value='"+ valeur.id +"'>"+ valeur.nomRegion +"</option>");
                 });
               }
           })
-      $("#region").change(function(){
+        $("#region").change(function(){
         $("#ville").empty();
-        $("#ville").append("<option value=''>Choix</option>");
+        $("#ville").append("<option value=''></option>");
         var lis = $("#region").val();
     
         $.ajax({
-            url : "http://localhost:8000/selectVille/"+lis,
+            url : "http://localhost:8000/listVille/"+lis,
             dateType : "json",
             success:function(data){
+              //console.log(data);
               $.each(JSON.parse(data), function(cle, valeur){
-                $("#ville").append("<option value='"+valeur.idV+"'>"+valeur.nomV+"</option>");
+                $("#ville").append("<option value='"+valeur.id+"'>"+valeur.nomVille+"</option>");
               });
             }
         })

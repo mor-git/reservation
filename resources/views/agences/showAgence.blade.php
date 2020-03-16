@@ -29,8 +29,8 @@
                 <tr>
                   <th class="wd-15p">Name</th>
                   <th class="wd-20p">Ville</th>
+                  <th class="wd-20p">Règion</th>
                   <th class="wd-15p">Phone</th>
-                  <th class="wd-10p">Login</th>
                   <th class="wd-20p">Structure</th>
                   <th class="wd-25p">Action</th>
                   
@@ -40,13 +40,13 @@
               @foreach($les_agences as $agence)
                 <tr>
                   <td>{{ $agence->name }}</td>
-                  <td>{{ $agence->ville }}</td>
+                  <td>{{ $agence->villes->nomVille }}</td>
+                  <td>{{ $agence->regions->nomRegion }}</td>
                   <td>{{ $agence->phone }}</td>
-                  <td>{{ $agence->login }}</td>
                   <td>{{ $agence->structures->name }}</td>
                   <td>
                       <a href="" >Editer</a>
-                      <a href="" >Supprimer</a>
+                      <a href="" >Supp</a>
                   </td>
                 </tr>
               @endforeach

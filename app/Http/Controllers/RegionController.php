@@ -28,9 +28,9 @@ class RegionController extends Controller
        
         $region = new Region();
         $region->nomRegion        = $nom;
- 
         $region->save();
-        return view('regions/showRegion');
+        
+        return redirect('showRegions');
     }
 
     /**
@@ -48,7 +48,7 @@ class RegionController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
     public function showRegion()
     {
