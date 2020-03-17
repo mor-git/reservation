@@ -35,7 +35,7 @@ class GuichetController extends Controller
 
         $guichet->save();
         //return view('guichets/showGuichet');
-        return redirect('guichet');
+        return redirect('showGuichets');
     }
 
     /**

@@ -26,14 +26,14 @@ class AgenceController extends Controller
     }
     public function listRegion()
     {
-        $region = Region::all();
+        $region = Region::orderBy('nomRegion')->get();
         echo json_encode($region);
         //echo $region;
         //return $region;
     }
     public function listVilleById($id)
     {
-        $ville = Ville::where('region_id', $id)->get();
+        $ville = Ville::where('region_id', $id)->orderBy('nomVille')->get();
         echo json_encode($ville);
         //return $ville;
     }

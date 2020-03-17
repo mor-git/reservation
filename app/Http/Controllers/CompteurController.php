@@ -11,8 +11,7 @@ class CompteurController extends Controller
 
     public function index()
     {   
-        $compteurs = Compteur::all();
-        return view('compteurs.addCompteur', ['compt' => $compteurs]);
+        return view('compteurs.addCompteur');
     }
     
     public function createCompteur(Request $request)
@@ -25,8 +24,15 @@ class CompteurController extends Controller
        $compteur->ticketUtiliser = 0;
 
        $compteur->save();
-       return view('compteurs/showCompteur');
+       return redirect('compteur');
+    } 
+
+    public function showCompteur()
+    {   
+        $compteurs = Compteur::all();
+        return view('compteurs/showCompteur', ['compt' => $compteurs]);
     }
+
     public function totalTicket(Request $request, $id) 
     {
        $tickets = Compteur::find($id);
@@ -34,6 +40,8 @@ class CompteurController extends Controller
        $totals = $valeur + 1;
        $tickets->totalTicket = $totals;
        $tickets->save();
+
+       echo $totals; 
        //return redirect()->route('/', [$tickets, $totals]);
        //return view('index',['total' => $totals, 'tickettotal' =>  $tickets]);
     }
@@ -44,6 +52,19 @@ class CompteurController extends Controller
        $nbrs = $valeur + 1;
        $tickets->ticketUtiliser = $nbrs;
        $tickets->save();
-       return view('index',['utiliser' => $nbrs, 'ticketutiliser' => $tickets]);
+
+       echo $nbrs;
+      // return view('index',['utiliser' => $nbrs, 'ticketutiliser' => $tickets]);
+    }
+
+    public function reinitialiser(Request $request, $id)
+    {
+       $tickets = Compteur::find($id);
+       $tickets->totalTicket   = 0;
+       $tickets->ticketUtiliser = 0;
+       $tickets->save();
+
+       echo $tickets;
+      // return view('index',['utiliser' => $nbrs, 'ticketutiliser' => $tickets]);
     }
 }

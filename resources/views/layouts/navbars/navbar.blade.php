@@ -98,7 +98,7 @@
         <!--</li>--><!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
-            <i class="fa fa-users tx-18"></i>
+            <i class="menu-item-icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">Région</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub nav flex-column">
@@ -108,7 +108,7 @@
         </li><!-- br-menu-item -->
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
-            <i class="fa fa-users tx-18"></i>
+            <i class="menu-item-icon ion-ios-filing-outline tx-24"></i>
             <span class="menu-item-label">Ville</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub nav flex-column">

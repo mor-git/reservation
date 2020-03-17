@@ -1,4 +1,4 @@
 
 <?php
-var_dump($total);die();
+var_dump($compt);die();
 ?>

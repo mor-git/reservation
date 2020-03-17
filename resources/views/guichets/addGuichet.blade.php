@@ -30,7 +30,7 @@
         <p class="br-section-text">A basic form where labels are aligned in left.</p>
         <!--{{ url('/addGuichet') }}-->
         <form  method="post" action="{{ url('/addGuichet') }}" id="form">
-            <input type="hidden" value="{{csrf_token()}}" name="_token" />
+            <input type="hidden" value="{{csrf_token()}}" name="_token" /> 
             <div class="row">
               <label class="col-sm-2 form-control-label">Name: <span class="tx-danger">*</span></label>
               <div class="col-sm-8 mg-t-10 mg-sm-t-0">

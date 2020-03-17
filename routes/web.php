@@ -145,7 +145,7 @@ Route::get('/guichet',[
     'uses' => 'GuichetController@index'
 ]);
 Route::post('/addGuichet',[
-    'as' => 'createGuichet',
+    'as' => 'addGuichet',
     'uses' => 'GuichetController@createGuichet'
 ]);
 Route::get('/showGuichets',[
@@ -169,6 +169,10 @@ Route::get('/ticket/{id}',[
 Route::get('/utiliser/{id}',[
     'as' => 'utiliser',
     'uses' => 'CompteurController@ticketUtilise'
+]);
+Route::get('/reinitialiser/{id}',[
+    'as' => 'reinitialiser',
+    'uses' => 'CompteurController@reinitialiser'
 ]);
 Route::get('/compteur',[
     'as' => 'compteur',
