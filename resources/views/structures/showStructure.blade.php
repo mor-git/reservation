@@ -43,8 +43,9 @@
                   <td>{{ $structure->name }}</td>
                   <td>{{ $structure->typeStructure->type }}</td>
                   <td>
-                     <a href="{{ url('/editStructure', $structure->id )}}" class="icon ion-iphone">Edit</a>
-                     <a href="{{ url('/editStructure', $structure->id )}}">Supp</a>
+                     <a href="{{ url('/editStructure', $structure->id )}}"><i class='far fa-edit' style='font-size:20px;'></i></a>
+                     &nbsp;&nbsp;
+                     <a href="{{ url('/editStructure', $structure->id )}}"><i class='far fa-trash-alt' style='font-size:20px;color:red'></i></a>
                   </td>
                 </tr>
                 <?php $i++; ?>

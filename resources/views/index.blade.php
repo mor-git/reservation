@@ -63,7 +63,8 @@
       <div class="br-pagebody">
         <div class="row row-sm">
           <div class="col-sm-6 col-xl-3">
-            <div class="bg-info rounded overflow-hidden" id="monDiv1">
+            <!--<div class="bg-info rounded overflow-hidden" id="monDiv1">-->
+            <div class="bg-info rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
                 <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
@@ -101,7 +102,8 @@
               <div id="ch2" class="ht-50 tr-y-1"></div>
             </div>
           </div><!-- col-3 -->
-          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0" id="monDiv2">
+          <!--<div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0" id="monDiv2">-->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
             <div class="bg-primary rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
                 <i class="ion ion-clock tx-60 lh-0 tx-white op-7"></i>
@@ -178,39 +180,47 @@
       </div>
       @endif
 <!-- ########## END: MAIN PANEL ########## -->
+@endsection
+@section('script')
+<?php
+  if(Auth::check())
+    $idd = Auth::user()->agences->guichets;
+    foreach($idd as $id){
+      $idCompteur = $id->compteur_id;
+?>
 <script>
   $(document).ready(function(){ 
-      /*var cpt = 0;
-      $('#monDiv1').click(function(){
-         var compt = parseInt($('#compteur1').text()) + 1;
-         $('#compteur1').text(compt); 
-         cpt = compt;
-      });
-      $('#monDiv2').click(function(){
-         var compt2 = parseInt($('#compteur2').text()) + 1;
-         
-         if(compt2 <= cpt){
-            $('#compteur2').text(compt2);
-            var compt4 = cpt - compt2;
-            $('#compteur4').text(compt4);
-         }else{
-            $('#compteur2').text("Total Atteint");
-            
-            $('#compteur4').text("Total Atteint");
-         }
-         
-      });*/
+    var idCompteur = <?php echo ($idCompteur);?>;
+    console.log('ID Compteur:'+idCompteur);
+      var cpt = 0;
+      
+      $.ajax({
+        url : "http://localhost:8000/actuelle/"+idCompteur,
+        dateType : "json",
+        success:function(data){
+          console.log(data);
+          cpt = data;
+          $("#compteur1").text(data);
+        }
+      })
+      $.ajax({
+        url : "http://localhost:8000/appeler/"+idCompteur,
+        dateType : "json",
+        success:function(data){
+          console.log(data);
+          $("#compteur2").text(data);
+        }
+      })
 
-    /*$idd = Auth::user()->agences->guichets->compteur_id; 
-    var_dump($idd);die();
-    echo ($idd);die();*/
+      
     $('#monDiv1').click(function(){
 
       $.ajax({
-            url : "http://localhost:8000/ticket/"+1,
+            url : "http://localhost:8000/ticket/"+idCompteur,
             dateType : "json",
             success:function(data){
               console.log(data);
+              cpt = data;
               $("#compteur1").text(data);
             }
           })
@@ -218,11 +228,13 @@
     $('#monDiv2').click(function(){
 
       $.ajax({
-            url : "http://localhost:8000/utiliser/"+1,
+            url : "http://localhost:8000/utiliser/"+idCompteur,
             dateType : "json",
             success:function(data){
               console.log(data);
+              var reste = cpt - data;
               $("#compteur2").text(data);
+              $("#compteur4").text(reste);
             }
           })
     });
@@ -230,7 +242,7 @@
     $('#btnR').click(function(){
 
       $.ajax({
-            url : "http://localhost:8000/reinitialiser/"+1,
+            url : "http://localhost:8000/reinitialiser/"+idCompteur,
             dateType : "json",
             success:function(data){
               console.log(data);
@@ -239,12 +251,13 @@
               //console.log(result['libelle']);
               $("#compteur1").text(result.totalTicket);
               $("#compteur2").text(result.ticketUtiliser);
+              $("#compteur4").text(0);
             }
           })
       });
     
   });
 </script>
+<?php } ?>
 @endsection
 
-    

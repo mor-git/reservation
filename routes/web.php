@@ -162,14 +162,27 @@ Route::post('/updateGuichet/{id}',[
 ]);
 /**----------------------------Fin Routes Guichets-------------------------------- */
 /**-------------------------------Routes Compteurs------------------------------ */
+//--- Route pour faire avancer le compteur Total--------
 Route::get('/ticket/{id}',[
     'as' => 'ticket',
     'uses' => 'CompteurController@totalTicket'
 ]);
+//--- Route pour récupérer la valeur du compteur Total--------
+Route::get('/actuelle/{id}',[
+    'as' => 'actuelle',
+    'uses' => 'CompteurController@totalTicketActuelle'
+]);
+//--- Route pour récupérer la valeur du compteur Total--------
+Route::get('/appeler/{id}',[
+    'as' => 'appeler',
+    'uses' => 'CompteurController@ticketUtiliseAppeler'
+]);
+//--- Route pour faire avancer le compteur des gens qui passent aux caisses --------
 Route::get('/utiliser/{id}',[
     'as' => 'utiliser',
     'uses' => 'CompteurController@ticketUtilise'
 ]);
+//--- Route pour réinitialiser les compteurs --------
 Route::get('/reinitialiser/{id}',[
     'as' => 'reinitialiser',
     'uses' => 'CompteurController@reinitialiser'
@@ -185,6 +198,10 @@ Route::post('/addCompteur',[
 Route::get('/showCompteurs',[
     'as' => 'showCompteurs',
     'uses' => 'CompteurController@showCompteur'
+]);
+Route::get('/editCompteur/{id}',[
+    'as' => 'editCompteur',
+    'uses' => 'CompteurController@editCompteur'
 ]);
 /**------------------------------Fin Routes Compteurs ------------------------ */
 /**-------------------------------Routes Régions------------------------------ */

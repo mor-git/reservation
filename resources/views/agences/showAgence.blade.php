@@ -45,8 +45,9 @@
                   <td>{{ $agence->phone }}</td>
                   <td>{{ $agence->structures->name }}</td>
                   <td>
-                      <a href="" >Editer</a>
-                      <a href="" >Supp</a>
+                      <a href="" ><i class='far fa-edit' style='font-size:20px;'></i></a>
+                      &nbsp;&nbsp;
+                      <a href="" ><i class='far fa-trash-alt' style='font-size:20px;color:red'></i></a>
                   </td>
                 </tr>
               @endforeach

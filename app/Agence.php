@@ -16,9 +16,9 @@ class Agence extends Model
         return $this->belongsTo('App\Ville', 'ville_id');
     }
     public function guichets(){
-        return $this->howMany('App\Guichet');
+        return $this->hasMany('App\Guichet');
     }
     public function users(){
-        return $this->howMany('App\User');
+        return $this->hasMany('App\User');
     }
 }

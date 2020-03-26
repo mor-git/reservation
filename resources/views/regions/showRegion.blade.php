@@ -39,8 +39,9 @@
                   <td><?php echo $i; ?></td>
                   <td>{{ $region->nomRegion }}</td>
                   <td>
-                     <a href="{{ url('/editRegion', $region->id )}}" class="icon ion-iphone">Edit</a>
-                     <a href="{{ url('/editRegion', $region->id )}}">Supp</a>
+                     <a href="{{ url('/editRegion', $region->id )}}"><i class='far fa-edit' style='font-size:20px;'></i></a>
+                     &nbsp;&nbsp;
+                     <a href="{{ url('/editRegion', $region->id )}}"><i class='far fa-trash-alt' style='font-size:20px;color:red'></i></a>
                   </td>
                 </tr>
                 <?php $i++; ?>

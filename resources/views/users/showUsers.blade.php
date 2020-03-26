@@ -46,8 +46,9 @@
                   <td>{{ $user->agences->name }}</td>
                   <td>{{ $user->profils->libelle }}</td>
                   <td>
-                      <a href="{{ url('/editUser', $user->id) }}" >Edit</a>
-                      <a href="{{ url('/editUser', $user->id ) }}" >Supp</a>
+                      <a href="{{ url('/editUser', $user->id) }}" ><i class='far fa-edit' style='font-size:20px;'></i></a>
+                      &nbsp;
+                      <a href="{{ url('/editUser', $user->id ) }}" ><i class='far fa-trash-alt' style='font-size:20px;color:red'></i></a>
                   </td>
                 </tr>
               @endforeach

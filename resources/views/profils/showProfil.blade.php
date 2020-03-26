@@ -37,8 +37,9 @@
                   <td>Num</td>
                   <td>{{ $profil->libelle }}</td>
                   <td>
-                      <a href="{{ url('/editProfil', $profil->id) }}" >Editer</a>
-                      <a href="{{ url('/editProfil', $profil->id ) }}" >Supprimer</a>
+                      <a href="{{ url('/editProfil', $profil->id) }}" ><i class='far fa-edit' style='font-size:20px;'></i></a>
+                      &nbsp;&nbsp;
+                      <a href="{{ url('/editProfil', $profil->id ) }}" ><i class='far fa-trash-alt' style='font-size:20px;color:red'></i></a>
                   </td>
                 </tr>
               @endforeach
