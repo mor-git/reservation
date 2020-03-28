@@ -161,7 +161,37 @@ Route::post('/updateGuichet/{id}',[
     'uses' => 'GuichetController@updateGuichet'
 ]);
 /**----------------------------Fin Routes Guichets-------------------------------- */
-/**-------------------------------Routes Compteurs------------------------------ */
+/**-------------------------------Routes Affectation Agent Guichet---------------- */
+Route::get('/affectation/{id}',[ 
+    'as' => 'affectation',
+    'uses' => 'AffecterA_GController@index'
+]);
+Route::post('/affecter',[
+    'as' => 'affecter',
+    'uses' => 'AffecterA_GController@createAffectation'
+]);
+Route::get('/listGuichet/{id}',[
+    'as' => 'listGuichet',
+    'uses' => 'AffecterA_GController@listGuichet'
+]);
+Route::get('/listAgent/{id}',[
+    'as' => 'listAgent',
+    'uses' => 'AffecterA_GController@listAgent'
+]);
+Route::get('/indexGuichet/{id}',[
+    'as' => 'indexGuichet',
+    'uses' => 'AffecterA_GController@indexGuichet'
+]);
+Route::get('/addGuichetAgence/{id}',[
+    'as' => 'addGuichetAgence',
+    'uses' => 'AffecterA_GController@addGuichetAgence'
+]);
+Route::get('/indexAgent/{id}',[
+    'as' => 'indexAgent',
+    'uses' => 'AffecterA_GController@indexAgent'
+]);
+/**------------------------------Fin Routes Affectation Agent Guichet ------------ */
+/**-------------------------------Routes Compteurs-------------------------------- */
 //--- Route pour faire avancer le compteur Total--------
 Route::get('/ticket/{id}',[
     'as' => 'ticket',

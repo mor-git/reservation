@@ -66,11 +66,10 @@
             <!--<div class="bg-info rounded overflow-hidden" id="monDiv1">-->
             <div class="bg-info rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Total</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1" ><span id="compteur1">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-65 tx-semibold tx-uppercase tx-white-8 mg-b-10">Total</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65" ><span id="compteur1">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch1" class="ht-50 tr-y-1"></div>
@@ -79,11 +78,10 @@
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
             <div class="bg-purple rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">RESERVATION</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur3">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-40 tx-semibold tx-uppercase tx-white-8 mg-b-10">RESERVATION</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65"><span id="compteur3">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch3" class="ht-50 tr-y-1"></div>
@@ -92,11 +90,10 @@
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
             <div class="bg-teal rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">En attente</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur4">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-45 tx-semibold tx-uppercase tx-white-8 mg-b-10">En attente</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65"><span id="compteur4">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch2" class="ht-50 tr-y-1"></div>
@@ -106,11 +103,10 @@
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
             <div class="bg-primary rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-clock tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Numéro Appeler</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur2">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-30 tx-semibold tx-uppercase tx-white-8 mg-b-10">Numéro Appeler</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65"><span id="compteur2">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch4" class="ht-50 tr-y-1"></div>
@@ -124,11 +120,10 @@
           <div class="col-sm-6 col-xl-3">
             <div class="bg-info rounded overflow-hidden" id="monDiv1">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Total</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1" ><span id="compteur1">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-60 tx-semibold tx-uppercase tx-white-8 mg-b-10">Total</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65" ><span id="compteur1">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch1" class="ht-50 tr-y-1"></div>
@@ -137,11 +132,11 @@
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
             <div class="bg-purple rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
+                <!--<i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>-->
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">RESERVATION</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur3">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-40 tx-semibold tx-uppercase tx-white-8 mg-b-10">RESERVATION</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65"><span id="compteur3">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch3" class="ht-50 tr-y-1"></div>
@@ -150,11 +145,11 @@
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
             <div class="bg-teal rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>
+                <!--<i class="ion ion-monitor tx-60 lh-0 tx-white op-7"></i>-->
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">En attente</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur4">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-50 tx-semibold tx-uppercase tx-white-8 mg-b-10">En attente</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65"><span id="compteur4">0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch2" class="ht-50 tr-y-1"></div>
@@ -163,16 +158,21 @@
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0" id="monDiv2">
             <div class="bg-primary rounded overflow-hidden">
               <div class="pd-x-20 pd-t-20 d-flex align-items-center">
-                <i class="ion ion-clock tx-60 lh-0 tx-white op-7"></i>
+                <!--<i class="ion ion-clock tx-60 lh-0 tx-white op-7"></i>-->
                 <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Numéro Appeler</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"><span id="compteur2">0</span></p>
-                  <span class="tx-11 tx-roboto tx-white-8">Tickets</span>
+                  <p class="tx-10 tx-spacing-1 tx-mont mg-l-30 tx-semibold tx-uppercase tx-white-8 mg-b-10">Numéro Appeler</p>
+                  <p class="tx-50 tx-white tx-lato tx-bold mg-b-0 lh-1 mg-l-65"><span id="compteur2" >0</span></p>
+                  <span class="tx-11 tx-roboto tx-white-8 mg-l-60">Tickets</span>
                 </div>
               </div>
               <div id="ch4" class="ht-50 tr-y-1"></div>
             </div>
-          </div><!-- col-3 --> 
+            <div class="row mg-l-90 mg-t-10">
+              <input id="suivant" class="btn btn-primary" type="button" value="Suivant">
+            </div>
+          </div><!-- col-3 -->
+          <br><br><br><br><br><br> <br><br>
+          <br><br><br><br><br>  
           <div class="row mg-l-1 mg-t-20 btn-block">
               <input name="" id="btnR" class="btn btn-primary btn-block" type="button" value="Réinitialiser">
           </div>
@@ -225,7 +225,7 @@
             }
           })
     });
-    $('#monDiv2').click(function(){
+    $('#suivant').click(function(){
 
       $.ajax({
             url : "http://localhost:8000/utiliser/"+idCompteur,

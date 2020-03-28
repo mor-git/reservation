@@ -123,10 +123,17 @@
                 <span class="menu-item-label">Guichets</span>
               </a><!-- br-menu-link -->
               <ul class="br-menu-sub">
-                <li class="sub-item"><a href="{{ url('/guichet') }}" class="sub-link">New Guichet</a></li>
-                <li class="sub-item"><a href="{{ url('/showGuichets') }}" class="sub-link">List Guichets</a></li>
+                <li class="sub-item"><a href="{{ url('/listGuichet', Auth::user()->agence_id ) }}" class="sub-link">List Guichets</a></li>
+                <li class="sub-item"><a href="{{ url('/listAgent', Auth::user()->agence_id ) }}" class="sub-link">List Agents</a></li>
+                <li class="sub-item"><a href="{{ url('/affectation', Auth::user()->agence_id) }}" class="sub-link">Affectation</a></li>
               </ul>
             </li><!-- br-menu-item -->
+            <!--<li class="br-menu-item">
+              <a href="#" class="br-menu-link">
+                <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
+                <span class="menu-item-label">Affectation</span>
+              </a>
+            </li>-->  
         @else
             <br><br>
             <li class="br-menu-item">

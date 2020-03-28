@@ -17,42 +17,50 @@
           <p class="mg-b-0">DataTables is a plug-in for the jQuery Javascript library.</p>
         </div>
       </div><!-- d-flex -->
-     
+
       <div class="br-pagebody">
         <div class="br-section-wrapper">
           <h6 class="br-section-label">Basic Responsive DataTable</h6>
-          <p class="br-section-text">Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.</p>
-
+          <div class="mg-b-10" style="padding-left: 820px;">
+           <!-- <a href="{{ url('/indexAgent' )}}">-->
+                <button class="btn btn-secondary" style="background-color: #0095B6;border-color:#0095B6"><i class='fas fa-plus' style='font-size:14px;color:white;'></i>&nbsp;New Agent</button>
+            <!--</a>-->
+          </div>
           <div class="table-wrapper">
             <table id="datatable1" class="table display responsive nowrap">
               <thead>
                 <tr>
-                  <th class="wd-20p">Number</th>
-                  <th class="wd-20p">Logo</th>
+                  <th class="wd-15p">Number</th>
                   <th class="wd-15p">Name</th>
-                  <th class="wd-20p">Type Structure</th>
+                  <th class="wd-15p">Phone</th>
+                  <th class="wd-15p">Email</th>
+                  <th class="wd-20p">Agence</th>
+                  <th class="wd-20p">Profil</th>
+                  <th class="wd-20p">Statut</th>
                   <th class="wd-25p">Action</th>
                 </tr>
-              </thead>
+              </thead> 
               <tbody>
-              <?php $i = 1; ?>
-              @foreach($les_structures as $structure)
+              @foreach($les_agents as $user)
                 <tr>
-                  <td><?php echo $i; ?></td>
-                  <td><img src="{{ asset('/storage/logos/'.$structure->logo) }}" height="30px"/></td>
-                  <td>{{ $structure->name }}</td>
-                  <td>{{ $structure->typeStructure->type }}</td>
+                  <td>Num</td>
+                  <td>{{ $user->name }}</td>
+                  <td>{{ $user->phone }}</td>
+                  <td>{{ $user->email }}</td>
+                  <td>{{ $user->agences->name }}</td>
+                  <td>{{ $user->profils->libelle }}</td>
+                  <td><button style="background-color: green;color:white;border-color:green;">actif</button></td>
                   <td>
-                     <a href="{{ url('/editStructure', $structure->id )}}"><i class='far fa-edit' style='font-size:20px;'></i></a>
-                     &nbsp;&nbsp;
-                     <a href="{{ url('/editStructure', $structure->id )}}"><i class='far fa-trash-alt' style='font-size:20px;color:red'></i></a>
+                      <a href="{{ url('/editUser', $user->id) }}" ><i class='far fa-edit' style='font-size:20px;'></i></a>
+                      &nbsp;
+                      <a href="{{ url('/editUser', $user->id ) }}" ><i class='far fa-trash-alt' style='font-size:20px;color:red'></i></a>
                   </td>
                 </tr>
-                <?php $i++; ?>
               @endforeach
               </tbody>
             </table>
           </div><!-- table-wrapper -->
+                 
         </div><!-- br-section-wrapper -->
       </div><!-- br-pagebody -->
       <footer class="br-footer">
