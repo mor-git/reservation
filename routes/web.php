@@ -53,6 +53,7 @@ Route::get('/showProfils',[
 ]);
 /**------------------------------Fin Routes Profils ------------------------ */
 /**-------------------------------Routes Structures------------------------------ */
+
 Route::get('/structure',[
     'as' => 'structure',
     'uses' => 'StructureController@index'
@@ -265,3 +266,4 @@ Route::get('/showVilles',[
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

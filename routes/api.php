@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Cors;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,27 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::get('/showTypeStructures',[
-    'as'   => 'showTypeStructures',
-    'uses' => 'TypeStructureController@showTypeStructure',
+/**----------------------------Api Mobile Route Structure-------------------- */
+Route::get('/apiStructure',[
+    'as' => 'apiStructure',
+    'uses' => 'ApiStructureController@index',
+    'middleware' => 'cors'
+]);
+/**----------------------------Api Mobile Route Agence-------------------- */
+Route::get('/apiAgence/{id}',[
+    'as' => 'apiAgence',
+    'uses' => 'ApiAgenceController@showAgence', 
+    'middleware' => 'cors'
+]);
+/**----------------------------Api Mobile Route Région-------------------- */
+Route::get('/apiRegion',[
+    'as' => 'apiRegion',
+    'uses' => 'ApiRegionController@showRegions', 
+    'middleware' => 'cors'
+]);
+/**----------------------------Api Mobile Route Ville-------------------- */
+Route::get('/apiVille/{id}',[
+    'as' => 'apiVille',
+    'uses' => 'ApiVilleController@showVilles', 
     'middleware' => 'cors'
 ]);

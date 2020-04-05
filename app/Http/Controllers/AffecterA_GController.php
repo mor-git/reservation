@@ -26,6 +26,7 @@ class AffecterA_GController extends Controller
     {
         $agence = Agence::find($id);
         $guichet = Guichet::where('agence_id',$id)->get();
+
         return view('affectations.newGuichet', ['agence'=> $agence , 'guichet'=> $guichet]);
     }
     public function indexAgent($id)
